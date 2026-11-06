@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Tema Monaco para la tienda de la demo: fondo oscuro, rojo y marfil,
+   igual que la landing. Se carga después de tienda.css y solo cambia colores,
+   tipografía y radios; la estructura sigue siendo la del constructor.
+   ========================================================================== */
+
+#hbPreview { font-family: 'Plus Jakarta Sans', sans-serif !important; }
+
+/* Encabezado */
+.hf-topbar { font-weight: 600; letter-spacing: .01em; }
+.hf-search input, .hf-msearch { background: var(--m-surface) !important; border-color: var(--m-line) !important; color: var(--m-text); border-radius: 999px 0 0 999px; }
+.hf-search input::placeholder, .hf-msearch input::placeholder { color: var(--m-muted); }
+.hf-search button { border-radius: 0 999px 999px 0; }
+.hf-msearch { border-radius: 999px; border-width: 1px !important; }
+.hf-msearch input { color: var(--m-text); }
+.hf-nav { border-color: var(--m-line); }
+.hf-nav-item { font-weight: 600; }
+.hf-nav-item.hf-dep { border-radius: 999px; margin: 6px 10px 6px 0 !important; padding: 8px 18px !important; }
+.hf-nav-item:hover { color: var(--hf-red); }
+
+/* Secciones */
+.hb-sec-title { color: var(--m-text); text-transform: none; font-weight: 700; letter-spacing: -.02em; }
+.hb-sec-link { color: var(--m-muted); }
+.hb-car-dots .dot { background: transparent; border-color: var(--m-line); }
+.hb-car-dots .dot.on { background: var(--m-text); border-color: var(--m-text); }
+.hf-benef:hover { box-shadow: none; background: var(--m-surface); border-radius: 14px; }
+
+/* Tarjetas de producto */
+.hb-prod-card { background: var(--m-surface); border: 1px solid var(--m-line); overflow: hidden; }
+.hb-prod-card:hover { box-shadow: 0 16px 34px rgba(0,0,0,.45); }
+.hb-card-img, .hb-card-img.con-foto { background-color: #f1eee8; }
+.hb-card-marca { color: var(--m-muted); }
+.hb-card-nombre { color: var(--m-text); }
+.hb-card-precio { color: var(--m-text); }
+.hb-card-precio.oferta { color: var(--hf-red); }
+.hb-card-was, .hb-card-was s, .hb-card-rating { color: var(--m-muted); }
+.hb-card-stock.si { color: #7fd4ad !important; }
+.hb-card-flag.nuevo { color: #fff; }
+.hb-buy-outline { border: 1px solid var(--m-line); color: var(--m-text); }
+.hb-buy-outline:hover { background: var(--m-text); border-color: var(--m-text); color: #0b0c10; }
+#hbPreview .hb-sl-arrow { background: var(--m-surface); border-color: var(--m-line); color: var(--m-text); border-radius: 999px; }
+.hb-slider-movil { scrollbar-color: #3a3d47 transparent; }
+.hb-slider-movil::-webkit-scrollbar-track { background: rgba(255,255,255,.06); }
+.hb-slider-movil::-webkit-scrollbar-thumb { background: #3a3d47; }
+.hb-slider-movil .hb-sl-cell { border-color: var(--m-line); }
+
+/* Categorías y banners */
+.hf-cat-tile { border-radius: 14px; overflow: hidden; }
+.hf-cat-tile .nom { background: rgba(11,12,16,.88) !important; color: var(--m-text) !important; }
+.hf-banner-card { border-radius: 16px; overflow: hidden; }
+.hfb-btn { border-radius: 999px; }
+.hf-banner-card:hover .hfb-btn { background: var(--m-text); color: #0b0c10; border-color: var(--m-text); }
+
+/* Pie */
+.hf-foot-cols .lnk, .hf-foot-link, .hf-foot-enlace { color: var(--m-muted); }
+.hf-foot-bottom { border-color: var(--m-line) !important; color: var(--m-muted); }
+
+/* Ficha de producto */
+.pp-crumbs { color: var(--m-muted) !important; }
+.pp-crumbs span { color: var(--m-text) !important; }
+.pp-main-img, .pp-thumb { background-color: #f1eee8 !important; border-color: var(--m-line) !important; border-radius: 14px; }
+.pp-thumb.act { border-color: var(--hf-red) !important; }
+.pp-rating, .pp-specs td:first-child { color: var(--m-muted) !important; }
+.pp-desc { color: var(--m-muted) !important; }
+.pp-qty { border-color: var(--m-line) !important; border-radius: 999px; overflow: hidden; }
+.pp-qty button, .pp-qty input { background: var(--m-surface) !important; color: var(--m-text) !important; }
+.pp-add { border-radius: 999px !important; }
+.pp-envio { background: var(--m-surface) !important; color: var(--m-muted) !important; border-radius: 14px; }
+.pp-specs td { border-color: var(--m-line) !important; }
+.pp-precio .pct { background: rgba(229,56,59,.15) !important; }

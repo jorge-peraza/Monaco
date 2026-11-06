@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Tema Monaco para el panel de la demo: mismos colores que la landing
+   (fondo oscuro, rojo y marfil). Se carga al final y solo cambia variables,
+   tipografía y unos pocos colores que no salían de variables.
+   ========================================================================== */
+
+:root {
+  --bg: #0b0c10; --sidebar-bg: #08090c; --card-bg: #13151c;
+  --text-primary: #f3efe8; --text-secondary: #a5a3ab; --text-muted: #6f6e76;
+  --border: rgba(255,255,255,.08);
+  --sidebar-active-bg: #e5383b; --sidebar-active-text: #ffffff;
+  --chart-ventas: #e5383b; --chart-envios: #6f6e76;
+  --radius: 16px; --radius-sm: 10px;
+}
+
+body, .main, .hb-main, input, select, button, textarea { font-family: 'Plus Jakarta Sans', sans-serif !important; }
+body { background: var(--bg); color: var(--text-primary); }
+
+/* Marca y menú lateral */
+.brand-icon { background: #e5383b !important; }
+.nav-item { border-radius: 999px; }
+.nav-item:hover { background: rgba(255,255,255,.05); }
+.logout-btn { color: #ff7a7a; }
+.logout-btn:hover { background: rgba(229,56,59,.12); }
+.__mbar { background: #08090c !important; border-color: rgba(255,255,255,.08) !important; }
+.__mbar .__brand, .__mham { color: #f3efe8 !important; }
+.__mham:hover { background: rgba(255,255,255,.06) !important; }
+
+/* Botones como los de la landing: píldora marfil o solo borde */
+.btn, .hb-btn-outline, .hb-btn-primary, .chart-type-toggle, .chart-type-btn { border-radius: 999px !important; }
+.btn-primary, .hb-btn-primary { background: #f3efe8 !important; color: #0b0c10 !important; border-color: #f3efe8 !important; }
+.btn-outline, .hb-btn-outline { background: transparent !important; color: #f3efe8 !important; border: 1px solid rgba(255,255,255,.16) !important; }
+.chart-type-btn.active { background: rgba(255,255,255,.1) !important; color: #f3efe8 !important; box-shadow: none !important; }
+
+/* Tarjetas y campos */
+.kpi-card, .action-card, .perf-card, .chart-card, .donut-card, .kpi-mini, .table-wrap, .toolbar, .resena-row, .mk-card, .mk-kpi { background: var(--card-bg) !important; border-color: var(--border) !important; }
+.perf-card.active { border-color: #e5383b !important; box-shadow: 0 0 0 1px #e5383b inset; }
+.search-input, .filter-select, .filter-date, .tpl-row input, .hb-library-search input { background: rgba(255,255,255,.04) !important; color: #f3efe8 !important; border-color: rgba(255,255,255,.1) !important; }
+th { background: transparent !important; color: #6f6e76 !important; }
+td { border-color: rgba(255,255,255,.06) !important; }
+tr:hover td { background: rgba(255,255,255,.02) !important; }
+.prod-thumb { background: #f1eee8 !important; }
+
+/* Fondos y etiquetas que venían claros */
+main, .main { background: var(--bg) !important; }
+tr.selected td, tr.is-sel td, thead tr { background: transparent !important; }
+.kpi-icon, .kpi-mini-icon, .badge, .estado-badge, .verified-badge, .pago-chip { background: rgba(255,255,255,.07) !important; color: #e8e5df !important; }
+td span[style*="background"] { background: rgba(255,255,255,.07) !important; color: #e8e5df !important; }
+
+/* Constructor de la página, todo en oscuro como el resto del panel */
+.hb-topbar, .hb-library { background: var(--bg) !important; }
+.hb-canvas { background: var(--sidebar-bg) !important; }
+.hb-title, .hb-lib-name, .hb-block-name { color: #f3efe8 !important; }
+.hb-lib-item, .hb-block { background: var(--card-bg) !important; }
+.hb-lib-item:hover, .hb-block:hover { border-color: rgba(255,255,255,.2) !important; background: #191b23 !important; }
+.hb-block.sel { border-color: #e5383b !important; box-shadow: 0 0 0 1px #e5383b !important; }
+.hb-lib-ico, .hb-block-ico, .hb-lib-add { background: rgba(255,255,255,.06) !important; color: #d3d0d6 !important; }
+.hb-lib-item:hover .hb-lib-add { background: #f3efe8 !important; color: #0b0c10 !important; }
+.hb-viewport-toggle { background: rgba(255,255,255,.05) !important; border-radius: 999px; }
+.hb-vp-btn { border-radius: 999px !important; }
+.hb-vp-btn.active { background: rgba(255,255,255,.14) !important; color: #f3efe8 !important; box-shadow: none !important; }
+.hb-status, .hb-ic-btn[style*="2e7d47"] { color: #7fd4ad !important; }
+.hb-ic-btn:hover { background: rgba(255,255,255,.08) !important; }
+.hb-preview { background: #0b0c10 !important; border-color: var(--border) !important; box-shadow: none !important; }
+.hb-preview-scroll { background: var(--sidebar-bg); }

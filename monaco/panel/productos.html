@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos – Monaco</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/panel/admin-shell.css">
+    <link rel="stylesheet" href="../css/panel/productos-listado.css">
+    <link rel="stylesheet" href="../css/panel/admin.css">
+  <link rel="stylesheet" href="../css/panel/tema-monaco.css">
+</head>
+<body>
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <div class="brand-icon">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M3 18V6l9 7 9-7v12" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div><div class="brand-name">Monaco</div><div class="brand-sub">Administración</div></div>
+  </div>
+  <nav>
+        <a class="nav-item " href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a>
+        <a class="nav-item active" href="productos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>Productos</a>
+        <a class="nav-item " href="pedidos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>Pedidos</a>
+        <a class="nav-item " href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Clientes</a>
+        <a class="nav-item " href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h7"/></svg>Categorías</a>
+        <a class="nav-item " href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Cupones</a>
+        <a class="nav-item " href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Envíos</a>
+        <a class="nav-item " href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Integraciones</a>
+        <a class="nav-item " href="resenas.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Reseñas</a>
+        <a class="nav-item " href="marketing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>Marketing</a>
+        <a class="nav-item " href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Inventario</a>
+        <a class="nav-item " href="constructor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Página principal</a>
+      </nav>
+  <div class="sidebar-footer">
+    <button type="button" class="nav-item sidebar-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg><span>Contraer menú</span></button>
+    <div class="user-info">
+      <div class="user-email">Administrador</div>
+      <div class="user-status">admin@monaco.mx</div>
+    </div>
+    <button type="button" class="logout-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Cerrar sesión</button>
+  </div>
+</aside>
+<div class="__mbar">
+  <button class="__mham" aria-label="Menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <span class="__brand">Monaco</span>
+</div>
+<main class="main">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Productos</div>
+      <div class="page-sub">Gestión del catálogo de Monaco</div>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Badges y destacados</button>
+      <button class="btn btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Exportar CSV</button>
+      <a href="#" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Nuevo producto</a>
+    </div>
+  </div>
+
+  <div class="kpi-strip">
+        <div class="kpi-mini">
+      <div class="kpi-mini-icon neutral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+      <div><div class="kpi-mini-val">15</div><div class="kpi-mini-label">Total productos</div></div>
+    </div>
+        <div class="kpi-mini">
+      <div class="kpi-mini-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div><div class="kpi-mini-val">14</div><div class="kpi-mini-label">Activos</div></div>
+    </div>
+        <div class="kpi-mini">
+      <div class="kpi-mini-icon yellow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+      <div><div class="kpi-mini-val">3</div><div class="kpi-mini-label">Stock bajo</div></div>
+    </div>
+        <div class="kpi-mini">
+      <div class="kpi-mini-icon red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
+      <div><div class="kpi-mini-val">1</div><div class="kpi-mini-label">Agotados</div></div>
+    </div>
+      </div>
+
+  <div class="toolbar">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>      <input class="search-input" type="text" placeholder="Buscar por nombre, SKU o marca…">
+    </div>
+    <select class="filter-select"><option>Todos los estados</option></select>
+    <select class="filter-select"><option>Todas las categorías</option></select>
+    <select class="filter-select"><option>Todas las marcas</option></select>
+    <div class="toolbar-divider"></div>
+    <div class="view-toggle">
+      <button class="view-btn active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></button>
+      <button class="view-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></button>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th class="col-check"><input type="checkbox"></th>
+          <th class="col-img"></th>
+          <th class="col-name sortable">Producto <span class="sort-icon"><svg viewBox="0 0 8 8" fill="currentColor"><path d="M4 0l4 4H0z"/></svg><svg viewBox="0 0 8 8" fill="currentColor"><path d="M4 8L0 4h8z"/></svg></span></th>
+          <th class="col-sku">SKU</th>
+          <th class="col-cat">Categoría</th>
+          <th class="col-price sortable">Precio <span class="sort-icon"><svg viewBox="0 0 8 8" fill="currentColor"><path d="M4 0l4 4H0z"/></svg><svg viewBox="0 0 8 8" fill="currentColor"><path d="M4 8L0 4h8z"/></svg></span></th>
+          <th class="col-stock sortable">Stock <span class="sort-icon"><svg viewBox="0 0 8 8" fill="currentColor"><path d="M4 0l4 4H0z"/></svg><svg viewBox="0 0 8 8" fill="currentColor"><path d="M4 8L0 4h8z"/></svg></span></th>
+          <th class="col-estado">Estado</th>
+          <th class="col-acc">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr>
+          <td class="col-check"><input type="checkbox"></td>
+          <td class="col-img"><div class="prod-thumb"><img src="../img/productos/audifonos-aura-negro.svg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div></td>
+          <td class="col-name"><div class="prod-name">Audífonos inalámbricos Aura con cancelación de ruido</div><div class="prod-brand">AURA</div></td>
+          <td class="col-sku" style="color:var(--text-muted);font-size:12px;font-family:monospace">AUR-210N</td>
+          <td class="col-cat" style="font-size:12px;color:var(--text-secondary)">Audio</td>
+          <td class="col-price"><span class="price-regular">$2,499</span></td>
+          <td class="col-stock"><div class="stock-wrap"><span class="stock-num ok">34</span><div class="stock-bar-bg"><div class="stock-bar ok" style="width:70.833333333333%"></div></div></div></td>
+          <td class="col-estado"><span class="badge activo"><span class="badge-dot"></span>Activo</span></td>
+          <td class="col-acc"><div class="actions-cell">
+            <a href="#" class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+            <button class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <button class="btn-icon danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+          </div></td>
+        </tr>
+                <tr>
+          <td class="col-check"><input type="checkbox"></td>
+          <td class="col-img"><div class="prod-thumb"><img src="../img/productos/audifonos-aura-arena.svg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div></td>
+          <td class="col-name"><div class="prod-name">Audífonos Aura edición Arena</div><div class="prod-brand">AURA</div></td>
+          <td class="col-sku" style="color:var(--text-muted);font-size:12px;font-family:monospace">AUR-210A</td>
+          <td class="col-cat" style="font-size:12px;color:var(--text-secondary)">Audio</td>
+          <td class="col-price"><span class="price-regular">$2,499</span></td>
+          <td class="col-stock"><div class="stock-wrap"><span class="stock-num ok">18</span><div class="stock-bar-bg"><div class="stock-bar ok" style="width:37.5%"></div></div></div></td>
+          <td class="col-estado"><span class="badge activo"><span class="badge-dot"></span>Activo</span></td>
+          <td class="col-acc"><div class="actions-cell">
+            <a href="#" class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+            <button class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <button class="btn-icon danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+          </div></td>
+        </tr>
+                <tr>
+          <td class="col-check"><input type="checkbox"></td>
+          <td class="col-img"><div class="prod-thumb"><img src="../img/productos/reloj-vertice-acero.svg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div></td>
+          <td class="col-name"><div class="prod-name">Reloj Vértice 40 mm acero y correa negra</div><div class="prod-brand">VÉRTICE</div></td>
+          <td class="col-sku" style="color:var(--text-muted);font-size:12px;font-family:monospace">VRT-40AC</td>
+          <td class="col-cat" style="font-size:12px;color:var(--text-secondary)">Relojes</td>
+          <td class="col-price"><span class="price-regular">$3,290</span></td>
+          <td class="col-stock"><div class="stock-wrap"><span class="stock-num ok">12</span><div class="stock-bar-bg"><div class="stock-bar ok" style="width:25%"></div></div></div></td>
+          <td class="col-estado"><span class="badge activo"><span class="badge-dot"></span>Activo</span></td>
+          <td class="col-acc"><div class="actions-cell">
+            <a href="#" class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+            <button class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <button class="btn-icon danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+          </div></td>
+        </tr>
+                <tr>
+          <td class="col-check"><input type="checkbox"></td>
+          <td class="col-img"><div class="prod-thumb"><img src="../img/productos/reloj-vertice-piel.svg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div></td>
+          <td class="col-name"><div class="prod-name">Reloj Vértice 40 mm dorado con correa de piel</div><div class="prod-brand">VÉRTICE</div></td>
+          <td class="col-sku" style="color:var(--text-muted);font-size:12px;font-family:monospace">VRT-40PL</td>
+          <td class="col-cat" style="font-size:12px;color:var(--text-secondary)">Relojes</td>
+          <td class="col-price"><span class="price-regular">$3,590</span></td>
+          <td class="col-stock"><div class="stock-wrap"><span class="stock-num low">7</span><div class="stock-bar-bg"><div class="stock-bar mid" style="width:14.583333333333%"></div></div></div></td>
+          <td class="col-estado"><span class="badge activo"><span class="badge-dot"></span>Activo</span></td>
+          <td class="col-acc"><div class="actions-cell">
+            <a href="#" class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+            <button class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <button class="btn-icon danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+          </div></td>
+        </tr>
+                <tr>
+          <td class="col-check"><input type="checkbox"></td>
+          <td class="col-img"><div class="prod-thumb"><img src="../img/productos/tenis-kora-blanco.svg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div></td>
+          <td class="col-name"><div class="prod-name">Tenis Kora Runner blanco</div><div class="prod-brand">KORA</div></td>
+          <td class="col-sku" style="color:var(--text-muted);font-size:12px;font-family:monospace">KOR-RN-BL</td>
+          <td class="col-cat" style="font-size:12px;color:var(--text-secondary)">Calzado</td>
+          <td class="col-price"><span class="price-regular">$1,890</span></td>
+          <td class="col-stock"><div class="stock-wrap"><span class="stock-num ok">45</span><div class="stock-bar-bg"><div class="stock-bar ok" style="width:93.75%"></div></div></div></td>
+          <td class="col-estado"><span class="badge activo"><span class="badge-dot"></span>Activo</span></td>
+          <td class="col-acc"><div class="actions-cell">
+            <a href="#" class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+            <button class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <button class="btn-icon danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+          </div></td>
+        </tr>
+                <tr>
+          <td class="col-check"><input type="checkbox"></td>
+          <td class="col-img"><div class="prod-thumb"><img src="../img/productos/tenis-kora-azul.svg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div></td>
+          <td class="col-name"><div class="prod-name">Tenis Kora Runner azul noche</div><div class="prod-brand">KORA</div></td>
+          <td class="col-sku" style="color:var(--text-muted);font-size:12px;font-family:monospace">KOR-RN-AZ</td>
+          <td class="col-cat" style="font-size:12px;color:var(--text-secondary)">Calzado</td>
+          <td class="col-price"><span class="price-regular">$1,890</span></td>
+          <td class="col-stock"><div class="stock-wrap"><span class="stock-num low">3</span><div class="stock-bar-bg"><div class="stock-bar mid" style="width:6.25%"></div></div></div></td>
+          <td class="col-estado"><span class="badge activo"><span class="badge-dot"></span>Activo</span></td>
+          <td class="col-acc"><div class="actions-cell">
+            <a href="#" class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+            <button class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <button class="btn-icon danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+          </div></td>
+        </tr>
+                <tr>
+          <td class="col-check"><input type="checkbox"></td>
+          <td class="col-img"><div class="prod-thumb"><img src="../img/productos/mochila-alba-olivo.svg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div></td>
+          <td class="col-name"><div class="prod-name">Mochila urbana Alba 22 L verde olivo</div><div class="prod-brand">ALBA</div></td>
+          <td class="col-sku" style="color:var(--text-muted);font-size:12px;font-family:monospace">ALB-22-OL</td>
+          <td class="col-cat" style="font-size:12px;color:var(--text-secondary)">Mochilas</td>
+          <td class="col-price"><span class="price-regular">$1,290</span></td>
+          <td class="col-stock"><div class="stock-wrap"><span class="stock-num ok">26</span><div class="stock-bar-bg"><div class="stock-bar ok" style="width:54.166666666667%"></div></div></div></td>
+          <td class="col-estado"><span class="badge activo"><span class="badge-dot"></span>Activo</span></td>
+          <td class="col-acc"><div class="actions-cell">
+            <a href="#" class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+            <button class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <button class="btn-icon danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+          </div></td>
+        </tr>
+                <tr>
+          <td class="col-check"><input type="checkbox"></td>
+          <td class="col-img"><div class="prod-thumb"><img src="../img/productos/mochila-alba-arena.svg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div></td>
+          <td class="col-name"><div class="prod-name">Mochila urbana Alba 22 L arena</div><div class="prod-brand">ALBA</div></td>
+          <td class="col-sku" style="color:var(--text-muted);font-size:12px;font-family:monospace">ALB-22-AR</td>
+          <td class="col-cat" style="font-size:12px;color:var(--text-secondary)">Mochilas</td>
+          <td class="col-price"><span class="price-regular">$1,290</span></td>
+          <td class="col-stock"><div class="stock-wrap"><span class="stock-num low">0</span><div class="stock-bar-bg"><div class="stock-bar low" style="width:0%"></div></div></div></td>
+          <td class="col-estado"><span class="badge agotado"><span class="badge-dot"></span>Agotado</span></td>
+          <td class="col-acc"><div class="actions-cell">
+            <a href="#" class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+            <button class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <button class="btn-icon danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+          </div></td>
+        </tr>
+                <tr>
+          <td class="col-check"><input type="checkbox"></td>
+          <td class="col-img"><div class="prod-thumb"><img src="../img/productos/botella-lumen-mar.svg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div></td>
+          <td class="col-name"><div class="prod-name">Botella térmica Lumen 750 ml verde mar</div><div class="prod-brand">LUMEN</div></td>
+          <td class="col-sku" style="color:var(--text-muted);font-size:12px;font-family:monospace">LUM-750-VM</td>
+          <td class="col-cat" style="font-size:12px;color:var(--text-secondary)">Hogar</td>
+          <td class="col-price"><span class="price-regular">$449</span></td>
+          <td class="col-stock"><div class="stock-wrap"><span class="stock-num ok">120</span><div class="stock-bar-bg"><div class="stock-bar ok" style="width:100%"></div></div></div></td>
+          <td class="col-estado"><span class="badge activo"><span class="badge-dot"></span>Activo</span></td>
+          <td class="col-acc"><div class="actions-cell">
+            <a href="#" class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+            <button class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <button class="btn-icon danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+          </div></td>
+        </tr>
+                <tr>
+          <td class="col-check"><input type="checkbox"></td>
+          <td class="col-img"><div class="prod-thumb"><img src="../img/productos/botella-lumen-coral.svg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div></td>
+          <td class="col-name"><div class="prod-name">Botella térmica Lumen 750 ml coral</div><div class="prod-brand">LUMEN</div></td>
+          <td class="col-sku" style="color:var(--text-muted);font-size:12px;font-family:monospace">LUM-750-CO</td>
+          <td class="col-cat" style="font-size:12px;color:var(--text-secondary)">Hogar</td>
+          <td class="col-price"><span class="price-regular">$449</span></td>
+          <td class="col-stock"><div class="stock-wrap"><span class="stock-num ok">88</span><div class="stock-bar-bg"><div class="stock-bar ok" style="width:100%"></div></div></div></td>
+          <td class="col-estado"><span class="badge activo"><span class="badge-dot"></span>Activo</span></td>
+          <td class="col-acc"><div class="actions-cell">
+            <a href="#" class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+            <button class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <button class="btn-icon danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+          </div></td>
+        </tr>
+                <tr>
+          <td class="col-check"><input type="checkbox"></td>
+          <td class="col-img"><div class="prod-thumb"><img src="../img/productos/bocina-pulse.svg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div></td>
+          <td class="col-name"><div class="prod-name">Bocina portátil Pulse resistente al agua</div><div class="prod-brand">PULSE</div></td>
+          <td class="col-sku" style="color:var(--text-muted);font-size:12px;font-family:monospace">PLS-MINI</td>
+          <td class="col-cat" style="font-size:12px;color:var(--text-secondary)">Audio</td>
+          <td class="col-price"><span class="price-regular">$1,690</span></td>
+          <td class="col-stock"><div class="stock-wrap"><span class="stock-num ok">21</span><div class="stock-bar-bg"><div class="stock-bar ok" style="width:43.75%"></div></div></div></td>
+          <td class="col-estado"><span class="badge activo"><span class="badge-dot"></span>Activo</span></td>
+          <td class="col-acc"><div class="actions-cell">
+            <a href="#" class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+            <button class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <button class="btn-icon danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+          </div></td>
+        </tr>
+                <tr>
+          <td class="col-check"><input type="checkbox"></td>
+          <td class="col-img"><div class="prod-thumb"><img src="../img/productos/lampara-nordika.svg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div></td>
+          <td class="col-name"><div class="prod-name">Lámpara de escritorio Nórdika LED</div><div class="prod-brand">NÓRDIKA</div></td>
+          <td class="col-sku" style="color:var(--text-muted);font-size:12px;font-family:monospace">NRD-LMP-01</td>
+          <td class="col-cat" style="font-size:12px;color:var(--text-secondary)">Hogar</td>
+          <td class="col-price"><span class="price-regular">$1,150</span></td>
+          <td class="col-stock"><div class="stock-wrap"><span class="stock-num ok">15</span><div class="stock-bar-bg"><div class="stock-bar ok" style="width:31.25%"></div></div></div></td>
+          <td class="col-estado"><span class="badge activo"><span class="badge-dot"></span>Activo</span></td>
+          <td class="col-acc"><div class="actions-cell">
+            <a href="#" class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+            <button class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <button class="btn-icon danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+          </div></td>
+        </tr>
+                <tr>
+          <td class="col-check"><input type="checkbox"></td>
+          <td class="col-img"><div class="prod-thumb"><img src="../img/productos/tazas-arena.svg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div></td>
+          <td class="col-name"><div class="prod-name">Set de 2 tazas de cerámica Arena</div><div class="prod-brand">NÓRDIKA</div></td>
+          <td class="col-sku" style="color:var(--text-muted);font-size:12px;font-family:monospace">NRD-TZ-2</td>
+          <td class="col-cat" style="font-size:12px;color:var(--text-secondary)">Hogar</td>
+          <td class="col-price"><span class="price-regular">$390</span></td>
+          <td class="col-stock"><div class="stock-wrap"><span class="stock-num ok">64</span><div class="stock-bar-bg"><div class="stock-bar ok" style="width:100%"></div></div></div></td>
+          <td class="col-estado"><span class="badge activo"><span class="badge-dot"></span>Activo</span></td>
+          <td class="col-acc"><div class="actions-cell">
+            <a href="#" class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+            <button class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <button class="btn-icon danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+          </div></td>
+        </tr>
+                <tr>
+          <td class="col-check"><input type="checkbox"></td>
+          <td class="col-img"><div class="prod-thumb"><img src="../img/productos/lentes-riviera.svg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div></td>
+          <td class="col-name"><div class="prod-name">Lentes de sol Riviera polarizados</div><div class="prod-brand">RIVIERA</div></td>
+          <td class="col-sku" style="color:var(--text-muted);font-size:12px;font-family:monospace">RIV-POL-01</td>
+          <td class="col-cat" style="font-size:12px;color:var(--text-secondary)">Accesorios</td>
+          <td class="col-price"><span class="price-regular">$990</span></td>
+          <td class="col-stock"><div class="stock-wrap"><span class="stock-num low">4</span><div class="stock-bar-bg"><div class="stock-bar mid" style="width:8.3333333333333%"></div></div></div></td>
+          <td class="col-estado"><span class="badge activo"><span class="badge-dot"></span>Activo</span></td>
+          <td class="col-acc"><div class="actions-cell">
+            <a href="#" class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+            <button class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <button class="btn-icon danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+          </div></td>
+        </tr>
+                <tr>
+          <td class="col-check"><input type="checkbox"></td>
+          <td class="col-img"><div class="prod-thumb"><img src="../img/productos/cafetera-kora.svg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div></td>
+          <td class="col-name"><div class="prod-name">Cafetera francesa Kora 1 L</div><div class="prod-brand">KORA</div></td>
+          <td class="col-sku" style="color:var(--text-muted);font-size:12px;font-family:monospace">KOR-CF-1L</td>
+          <td class="col-cat" style="font-size:12px;color:var(--text-secondary)">Hogar</td>
+          <td class="col-price"><span class="price-regular">$690</span></td>
+          <td class="col-stock"><div class="stock-wrap"><span class="stock-num ok">31</span><div class="stock-bar-bg"><div class="stock-bar ok" style="width:64.583333333333%"></div></div></div></td>
+          <td class="col-estado"><span class="badge activo"><span class="badge-dot"></span>Activo</span></td>
+          <td class="col-acc"><div class="actions-cell">
+            <a href="#" class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+            <button class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <button class="btn-icon danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+          </div></td>
+        </tr>
+              </tbody>
+    </table>
+  </div>
+</main>
+
+</body>
+</html>
