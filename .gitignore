@@ -1,0 +1,9 @@
+# Configuración local del editor
+.claude/
+
+# Sistema y entorno
+.DS_Store
+Thumbs.db
+.env
+.env.*
+*.log

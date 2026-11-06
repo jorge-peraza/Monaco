@@ -1,0 +1,32 @@
+/* Estilos de la página de Marketing (copiados del panel de DelfinTools). */
+*, *::before, *::after { box-sizing: border-box; }
+.main { margin-left: 200px; flex: 1; padding: 36px 48px 60px; min-width: 0; background: #f4f4f5; font-family: 'DM Sans', sans-serif; }
+.page-title { font-size: 22px; font-weight: 600; color: #18181b; }
+.page-sub { font-size: 13px; color: #a1a1aa; margin: 3px 0 24px; }
+.mk-kpis { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 22px; }
+.mk-kpi { flex: 1; min-width: 150px; background: #fff; border: 1px solid #e4e4e7; border-radius: 14px; padding: 16px 18px; }
+.mk-kpi .v { font-size: 22px; font-weight: 700; color: #18181b; }
+.mk-kpi .l { font-size: 12px; color: #a1a1aa; margin-top: 2px; }
+.mk-card { background: #fff; border: 1px solid #e4e4e7; border-radius: 14px; padding: 20px 22px; margin-bottom: 22px; }
+.mk-card h2 { font-size: 15px; font-weight: 700; color: #18181b; margin: 0 0 4px; }
+.mk-card .hint { font-size: 12.5px; color: #a1a1aa; margin-bottom: 16px; }
+table.mk { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.mk th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: #a1a1aa; padding: 8px 10px; border-bottom: 1px solid #ececef; }
+table.mk td { padding: 10px; border-bottom: 1px solid #f4f4f5; color: #3f3f46; vertical-align: top; }
+.tpl-row { display: flex; gap: 10px; align-items: center; padding: 9px 0; border-bottom: 1px solid #f4f4f5; flex-wrap: wrap; }
+.tpl-row .nombre { flex: 0 0 240px; font-size: 13px; font-weight: 600; color: #3f3f46; }
+.tpl-row input[type=text] { flex: 1; min-width: 180px; border: 1px solid #e4e4e7; border-radius: 8px; padding: 8px 10px; font-family: inherit; font-size: 12.5px; outline: none; }
+.sw { position: relative; display: inline-flex; cursor: pointer; }
+.sw input { display: none; }
+.sw .tr { width: 36px; height: 20px; border-radius: 99px; background: #d4d4d8; transition: background .18s; position: relative; }
+.sw .tr::after { content: ''; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: #fff; transition: transform .18s; }
+.sw input:checked + .tr { background: #2e7d47; }
+.sw input:checked + .tr::after { transform: translateX(16px); }
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px; border-radius: 9px; border: 1px solid #e4e4e7; background: #fff; color: #18181b; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer; }
+.btn-dark { background: #18181b; color: #fff; border-color: #18181b; }
+.badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 99px; }
+.badge.enviada { background: #e7f6ec; color: #2e7d47; }
+.badge.programada { background: #fdf3e3; color: #b0894e; }
+.badge.recuperado { background: #e7f6ec; color: #2e7d47; }
+.badge.enviado { background: #e9f0f8; color: #3f6899; }
+@media (max-width: 768px) { .main { margin-left: 0; padding: 70px 16px 40px; } .tpl-row .nombre { flex-basis: 100%; } }
