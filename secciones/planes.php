@@ -32,7 +32,7 @@ $planes = $CFG['planes'];
             <span class="plan-per">/mes</span>
           </div>
           <p class="plan-bill">Facturado mensualmente</p>
-          <p class="plan-extra"><?= $p['comision'] ? '+ ' . $p['comision'] . '% por venta concretada' : 'Sin comisión por venta' ?></p>
+          <p class="plan-extra<?= $p['comision'] ? ' is-comision' : '' ?>"><?= $p['comision'] ? '+ ' . $p['comision'] . '% por venta concretada' : 'Sin comisión por venta' ?></p>
           <ul>
             <?php if ($p['todo']): ?><li class="plan-todo"><?= icono('check', 16) ?><span>Todo lo de <?= e($p['todo']) ?></span></li><?php endif; ?>
             <?php foreach ($p['incluye'] as $item): ?>
@@ -58,14 +58,20 @@ $planes = $CFG['planes'];
             <tr>
               <th scope="col"><span class="sr">Función</span></th>
               <?php foreach ($planes as $p): ?>
-                <th scope="col" class="<?= $p['destacado'] ? 'is-featured' : '' ?>"><b><?= e($p['nombre']) ?></b><small>$<?= dinero($p['precio']) ?>/mes</small></th>
+                <th scope="col" class="comp-plan<?= $p['destacado'] ? ' is-featured' : '' ?>" data-precio-comp="<?= (int) $p['precio'] ?>">
+                  <?php if ($p['destacado']): ?><span class="comp-flag">Más elegido</span><?php endif; ?>
+                  <b><?= e($p['nombre']) ?></b>
+                  <small class="comp-para"><?= e($p['para']) ?></small>
+                  <span class="comp-precio">$<strong><?= dinero($p['precio']) ?></strong>/mes</span>
+                  <small class="comp-bill">Facturado mensualmente</small>
+                  <small class="comp-com"><?= $p['comision'] ? '+ ' . $p['comision'] . '% por venta' : 'Sin comisión' ?></small>
+                  <a href="#contratar" class="btn btn-sm <?= $p['destacado'] ? 'btn-primary' : 'btn-ghost' ?>" data-plan-cta="<?= e($p['id']) ?>">Elegir</a>
+                </th>
               <?php endforeach; ?>
             </tr>
           </thead>
-          <?php foreach ($CFG['comparativa'] as $grupo => $filas): ?>
-            <tbody>
-              <tr class="comp-grupo"><th scope="rowgroup" colspan="<?= count($planes) + 1 ?>"><?= e($grupo) ?></th></tr>
-              <?php foreach ($filas as $clave => $valores): ?>
+          <tbody>
+              <?php foreach ($CFG['comparativa'] as $clave => $valores): ?>
                 <tr>
                   <th scope="row"><?= ventaja($clave) ?></th>
                   <?php foreach ($valores as $k => $v): ?>
@@ -77,8 +83,7 @@ $planes = $CFG['planes'];
                   <?php endforeach; ?>
                 </tr>
               <?php endforeach; ?>
-            </tbody>
-          <?php endforeach; ?>
+          </tbody>
         </table>
       </div>
     </div>

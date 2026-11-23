@@ -28,11 +28,14 @@ return [
 
     'moneda' => 'MXN',
 
-    // Meses que se cobran al pagar anual (11 = un mes gratis).
-    'meses_anual' => 11,
+    // Meses que se cobran al pagar anual (10 = dos meses gratis).
+    'meses_anual' => 10,
 
     // Migración de productos: pago único por cada bloque de productos.
     'migracion' => ['bloque' => 100, 'precio' => 1500],
+
+    // Asistencia personalizada: servicio opcional, precio al mes.
+    'asistencia' => 1500,
 
     // Tiendas reales hechas con Monaco (sección «Tiendas en funcionamiento»).
     'tiendas' => [
@@ -72,55 +75,46 @@ return [
         'redes'        => ['Publicaciones en redes', 'Diseñamos y publicamos contenido en Instagram, Facebook y TikTok. Tú lo apruebas antes.'],
         'branding'     => ['Branding de tu marca', 'Logo, Misión, Visión, Banners y diseño.'],
         'migracion'    => ['Migración de productos', 'Pasamos tus productos desde Mercado Libre, Amazon o Excel: $1,500 por cada 100 productos, en un solo pago.'],
+        'asistencia'   => ['Asistencia personalizada', 'Un asesor te acompaña de forma personal para resolver dudas, hacer cambios en tu tienda y planear tus ventas. Opcional, en cualquier plan.'],
         'soporte'      => ['Soporte prioritario', 'Tus solicitudes se atienden antes que las demás.'],
         'reporte'      => ['Reporte mensual', 'Cada mes, un resumen de ventas, visitas y resultados de tus redes.'],
     ],
 
-    // Tabla comparativa. Valores en orden: Starter, Básico, Esencial, Marketing, Pro.
+    // Tabla comparativa: una sola lista, primero lo que distingue a cada plan.
+    // Valores en orden: Starter, Básico, Esencial, Marketing, Pro.
     // true = incluido, false = no incluido, texto = se muestra tal cual.
     'comparativa' => [
-        'Tienda' => [
-            'tienda'       => [true, true, true, true, true],
-            'productos'    => [true, true, true, true, true],
-            'constructor'  => [true, true, true, true, true],
-            'dispositivos' => [true, true, true, true, true],
-            'busqueda'     => [true, true, true, true, true],
-            'insignias'    => [true, true, true, true, true],
-            'legal'        => [true, true, true, true, true],
-        ],
-        'Ventas y pagos' => [
-            'comision'     => ['8%', 'Sin comisión', 'Sin comisión', 'Sin comisión', 'Sin comisión'],
-            'pagos'        => [true, true, true, true, true],
-            'reembolsos'   => [true, true, true, true, true],
-            'cupones'      => [true, true, true, true, true],
-            'carritos'     => [true, false, true, true, true],
-        ],
-        'Pedidos y envíos' => [
-            'pedidos'      => [true, true, true, true, true],
-            'envios'       => [true, true, true, true, true],
-            'inventario'   => [true, true, true, true, true],
-            'importacion'  => [true, true, true, true, true],
-        ],
-        'Clientes' => [
-            'crm'          => [true, true, true, true, true],
-            'chat'         => [true, false, true, true, true],
-            'postventa'    => [true, false, true, true, true],
-            'cuentas'      => [false, false, true, true, true],
-            'resenas'      => [false, false, true, true, true],
-            'correo'       => [false, false, true, true, true],
-        ],
-        'Marketing' => [
-            'correos_auto' => [true, true, true, true, true],
-            'seo'          => [true, true, true, true, true],
-            'campanias'    => [false, false, false, true, true],
-            'redes'        => [false, false, false, '8 al mes', '12 al mes'],
-            'branding'     => [false, false, false, true, true],
-        ],
-        'Servicio' => [
-            'migracion'    => ['Pago único', 'Pago único', 'Pago único', 'Pago único', 'Pago único'],
-            'soporte'      => [false, false, false, false, true],
-            'reporte'      => [false, false, false, false, true],
-        ],
+        'comision'     => ['8%', 'Sin comisión', 'Sin comisión', 'Sin comisión', 'Sin comisión'],
+        'redes'        => [false, false, false, '8 al mes', '12 al mes'],
+        'branding'     => [false, false, false, true, true],
+        'campanias'    => [false, false, false, true, true],
+        'chat'         => [true, false, true, true, true],
+        'carritos'     => [true, false, true, true, true],
+        'postventa'    => [true, false, true, true, true],
+        'cuentas'      => [false, false, true, true, true],
+        'resenas'      => [false, false, true, true, true],
+        'correo'       => [false, false, true, true, true],
+        'soporte'      => [false, false, false, false, true],
+        'reporte'      => [false, false, false, false, true],
+        'migracion'    => ['$1,500 / 100 productos', '$1,500 / 100 productos', '$1,500 / 100 productos', '$1,500 / 100 productos', '$1,500 / 100 productos'],
+        'asistencia'   => ['$1,500/mes', '$1,500/mes', '$1,500/mes', '$1,500/mes', '$1,500/mes'],
+        'tienda'       => [true, true, true, true, true],
+        'productos'    => [true, true, true, true, true],
+        'crm'          => [true, true, true, true, true],
+        'constructor'  => [true, true, true, true, true],
+        'dispositivos' => [true, true, true, true, true],
+        'pagos'        => [true, true, true, true, true],
+        'cupones'      => [true, true, true, true, true],
+        'reembolsos'   => [true, true, true, true, true],
+        'pedidos'      => [true, true, true, true, true],
+        'envios'       => [true, true, true, true, true],
+        'inventario'   => [true, true, true, true, true],
+        'importacion'  => [true, true, true, true, true],
+        'correos_auto' => [true, true, true, true, true],
+        'seo'          => [true, true, true, true, true],
+        'busqueda'     => [true, true, true, true, true],
+        'insignias'    => [true, true, true, true, true],
+        'legal'        => [true, true, true, true, true],
     ],
 
     // Precios mensuales en MXN. 'incluye' usa claves de 'ventajas'; [clave, texto] cambia el texto.

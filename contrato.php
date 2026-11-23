@@ -14,16 +14,14 @@ $mesesGratis = 12 - $CFG['meses_anual'];
 
 // Servicios incluidos según la tabla comparativa.
 $incluidos = [];
-foreach ($CFG['comparativa'] as $filas) {
-    foreach ($filas as $clave => $valores) {
-        $v = $valores[$k];
-        if ($v === false || in_array($clave, ['comision', 'migracion'], true)) continue;
-        $incluidos[] = $CFG['ventajas'][$clave][0] . (is_string($v) ? ' (' . $v . ')' : '');
-    }
+foreach ($CFG['comparativa'] as $clave => $valores) {
+    $v = $valores[$k];
+    if ($v === false || in_array($clave, ['comision', 'migracion', 'asistencia'], true)) continue;
+    $incluidos[] = $CFG['ventajas'][$clave][0] . (is_string($v) ? ' (' . $v . ')' : '');
 }
-$redes = $CFG['comparativa']['Marketing']['redes'][$k];
-$branding = $CFG['comparativa']['Marketing']['branding'][$k];
-$soporte = $CFG['comparativa']['Servicio']['soporte'][$k];
+$redes = $CFG['comparativa']['redes'][$k];
+$branding = $CFG['comparativa']['branding'][$k];
+$soporte = $CFG['comparativa']['soporte'][$k];
 $linea = fn () => '<span class="c-linea"></span>';
 ?>
 <!doctype html>
@@ -79,8 +77,9 @@ $linea = fn () => '<span class="c-linea"></span>';
       <p>Además de la mensualidad, el Cliente pagará al Prestador una comisión del <b><?= (int) $plan['comision'] ?>%</b> sobre el importe de cada venta concretada en la tienda, entendida como un pedido pagado y no cancelado ni reembolsado. La base es el total cobrado al comprador sin el costo de envío. La comisión se calcula al cierre de cada mes y se paga junto con la siguiente mensualidad, con el detalle de los pedidos que la originan.</p>
     <?php endif; ?>
 
-    <h3><?= $plan['comision'] ? 'Cuarta' : 'Tercera' ?>. Migración de productos</h3>
+    <h3><?= $plan['comision'] ? 'Cuarta' : 'Tercera' ?>. Migración y asistencia personalizada</h3>
     <p>A solicitud del Cliente, el Prestador migrará sus productos desde Mercado Libre, Amazon u hojas de cálculo, por <b>$<?= dinero($mig['precio']) ?> MXN por cada <?= $mig['bloque'] ?> productos</b>, en un solo pago y por adelantado. El número de productos a migrar se acordará por escrito antes de iniciar.</p>
+    <p>El Cliente podrá contratar, de forma opcional, asistencia personalizada por <b>$<?= dinero($CFG['asistencia']) ?> MXN al mes</b>, que se cobra junto con la mensualidad y puede cancelarse con el mismo aviso de la cláusula de vigencia.</p>
 
     <?php $n = $plan['comision'] ? 5 : 4; $ord = ['', 'Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima', 'Decimotercera', 'Decimocuarta', 'Decimoquinta']; ?>
 

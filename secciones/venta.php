@@ -34,7 +34,8 @@ $inicial = $CFG['planes'][2];
             <div class="seg seg-sm" data-seg="venta-pago">
               <span class="seg-pill" aria-hidden="true"></span>
               <button type="button" class="seg-btn is-active" data-value="mensual">Mensual</button>
-              <button type="button" class="seg-btn" data-value="anual">Anual · 1 mes gratis</button>
+              <?php $gratis = 12 - $CFG['meses_anual']; ?>
+              <button type="button" class="seg-btn" data-value="anual">Anual · <?= $gratis ?> <?= $gratis === 1 ? 'mes gratis' : 'meses gratis' ?></button>
             </div>
           </div>
         </div>
@@ -51,6 +52,16 @@ $inicial = $CFG['planes'][2];
             <small class="venta-nota">$<?= dinero($mig['precio']) ?> por cada <?= $mig['bloque'] ?> productos, en un solo pago. Opcional.</small>
           </div>
         </div>
+
+        <div class="venta-paso">
+          <span class="venta-n">4</span>
+          <div class="venta-cuerpo">
+            <b class="venta-t">Asistencia personalizada <?= ayuda($CFG['ventajas']['asistencia'][1], 'la asistencia personalizada') ?></b>
+            <button type="button" class="venta-switch" role="switch" aria-checked="false" data-asistencia>
+              <i aria-hidden="true"></i><span>Agregar por $<?= dinero($CFG['asistencia']) ?> al mes</span>
+            </button>
+          </div>
+        </div>
       </div>
 
       <aside class="venta-total" aria-live="polite">
@@ -58,6 +69,7 @@ $inicial = $CFG['planes'][2];
         <dl>
           <div><dt data-v-plan>Plan <?= e($inicial['nombre']) ?> · mensual</dt><dd data-v-plan-precio>$<?= dinero($inicial['precio']) ?></dd></div>
           <div class="venta-linea-mig" data-v-mig-fila hidden><dt data-v-mig>Migración</dt><dd data-v-mig-precio>$0</dd></div>
+          <div data-v-asis-fila hidden><dt>Asistencia personalizada · mensual</dt><dd>$<?= dinero($CFG['asistencia']) ?></dd></div>
         </dl>
         <div class="venta-hoy">
           <span>Total a pagar hoy</span>

@@ -11,7 +11,7 @@ $avisos = [
 
   <div class="container hero-lay">
     <div class="hero-copy">
-      <h1 class="hero-title" data-split>Tu tienda en línea, <span class="serif">lista para vender<i class="pt">.</i></span></h1>
+      <h1 class="hero-title" data-split>Tu tienda en línea, <span class="serif">sin comisiones<i class="pt">.</i></span></h1>
 
       <p class="hero-sub" data-reveal data-delay="300">Tienda, pagos y envíos en un solo lugar. Sin programar.</p>
 

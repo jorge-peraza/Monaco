@@ -55,6 +55,7 @@ $marca = $CFG['marca'];
         'planes'   => array_map(fn ($p) => ['id' => $p['id'], 'nombre' => $p['nombre'], 'precio' => $p['precio'], 'comision' => $p['comision']], $CFG['planes']),
         'mesesAnual' => $CFG['meses_anual'],
         'migracion'  => $CFG['migracion'],
+        'asistencia' => $CFG['asistencia'],
         'whatsapp'   => $CFG['contacto']['whatsapp'],
         'contrato'   => ESTATICO ? 'contrato-%s.html' : 'contrato.php?plan=%s',
     ], JSON_UNESCAPED_UNICODE) ?>;
