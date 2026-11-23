@@ -766,9 +766,17 @@
         ? `${pesos(precio * D.mesesAnual)} al año · ahorras ${pesos(precio * (12 - D.mesesAnual))}`
         : 'Facturado mensualmente';
     });
+    // La tabla comparativa muestra lo mismo que las tarjetas.
+    $$('[data-precio-comp]').forEach(th => {
+      const precio = +th.dataset.precioComp;
+      const anual = modo === 'anual';
+      tween($('.comp-precio strong', th), anual ? precio * D.mesesAnual / 12 : precio, entero, 600);
+      $('.comp-bill', th).textContent = anual ? `${pesos(precio * D.mesesAnual)} al año` : 'Facturado mensualmente';
+    });
     igualar('venta-pago', modo);
   });
   plans.forEach(card => { const a = $('.plan-amount', card); a._v = +card.dataset.precio; });
+  $$('[data-precio-comp]').forEach(th => { $('.comp-precio strong', th)._v = +th.dataset.precioComp; });
 
   /* ------------------------------------------------------------------------
      Contratar: plan, forma de pago, migración (+/−) y total al instante
@@ -784,12 +792,15 @@
     let plan = pick('.venta-plan.is-on').dataset.plan;
     let anual = false;
     let bloques = 0;
+    let asistencia = false;
+    const asisBtn = pick('[data-asistencia]');
     total._v = P[plan].precio;
     const pintar = () => {
       const p = P[plan];
       const periodo = anual ? p.precio * D.mesesAnual : p.precio;
       const productos = bloques * M.bloque;
       const migracion = bloques * M.precio;
+      const asis = asistencia ? D.asistencia : 0;
       botones.forEach(b => {
         const on = b.dataset.plan === plan;
         b.classList.toggle('is-on', on);
@@ -802,8 +813,12 @@
       pick('[data-v-mig-precio]').textContent = pesos(migracion);
       $('[data-mig-cant] b', venta).textContent = entero(productos);
       $('[data-mig="-1"]', venta).disabled = !bloques;
-      tween(total, periodo + migracion, pesos, 500);
-      pick('[data-v-despues]').textContent = anual ? `Después pagas ${pesos(periodo)} al año.` : `Después pagas ${pesos(p.precio)} al mes.`;
+      pick('[data-v-asis-fila]').hidden = !asistencia;
+      asisBtn.setAttribute('aria-checked', String(asistencia));
+      tween(total, periodo + migracion + asis, pesos, 500);
+      pick('[data-v-despues]').textContent = anual
+        ? `Después pagas ${pesos(periodo)} al año${asis ? ` y ${pesos(asis)} al mes de asistencia` : ''}.`
+        : `Después pagas ${pesos(p.precio + asis)} al mes.`;
       const com = pick('[data-v-comision]');
       com.hidden = !p.comision;
       com.textContent = p.comision ? `Más ${p.comision}% de cada venta concretada.` : '';
@@ -812,7 +827,8 @@
         `Hola, quiero contratar el plan ${p.nombre} (${anual ? 'anual' : 'mensual'}) de Monaco Services.`,
         p.comision ? `Entiendo que el plan incluye ${p.comision}% de comisión por venta concretada.` : '',
         bloques ? `Migración de ${entero(productos)} productos: ${pesos(migracion)}.` : '',
-        `Total a pagar hoy: ${pesos(periodo + migracion)}.`,
+        asis ? `Con asistencia personalizada: ${pesos(asis)} al mes.` : '',
+        `Total a pagar hoy: ${pesos(periodo + migracion + asis)}.`,
       ].filter(Boolean).join('\n');
       pick('[data-v-contratar]').href = `https://wa.me/${D.whatsapp}?text=${encodeURIComponent(texto)}`;
     };
@@ -821,6 +837,7 @@
       bloques = clamp(bloques + Number(b.dataset.mig), 0, 100);
       pintar();
     }));
+    asisBtn.addEventListener('click', () => { asistencia = !asistencia; pintar(); });
     onSeg('venta-pago', modo => { anual = modo === 'anual'; pintar(); igualar('billing', modo); });
     elegirPlan = id => { if (P[id]) { plan = id; pintar(); } };
     pintar();

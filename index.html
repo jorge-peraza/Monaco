@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css?v=1795403087">
+  <link rel="stylesheet" href="assets/css/main.css?v=1795404249">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -77,7 +77,7 @@
 
   <div class="container hero-lay">
     <div class="hero-copy">
-      <h1 class="hero-title" data-split>Tu tienda en línea, <span class="serif">lista para vender<i class="pt">.</i></span></h1>
+      <h1 class="hero-title" data-split>Tu tienda en línea, <span class="serif">sin comisiones<i class="pt">.</i></span></h1>
 
       <p class="hero-sub" data-reveal data-delay="300">Tienda, pagos y envíos en un solo lugar. Sin programar.</p>
 
@@ -697,7 +697,7 @@
       </div>
 
       <div class="billing" data-reveal>
-        <span class="billing-badge">1 mes gratis pagando anual</span>
+        <span class="billing-badge">2 meses gratis pagando anual</span>
         <div class="seg seg-sm" data-seg="billing">
           <span class="seg-pill" aria-hidden="true"></span>
           <button type="button" class="seg-btn is-active" data-value="mensual">Mensual</button>
@@ -715,7 +715,7 @@
             <span class="plan-per">/mes</span>
           </div>
           <p class="plan-bill">Facturado mensualmente</p>
-          <p class="plan-extra">+ 8% por venta concretada</p>
+          <p class="plan-extra is-comision">+ 8% por venta concretada</p>
           <ul>
             <li class="plan-todo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Todo lo de Básico</span></li>                                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="ventaja">Chat con tus <span class="ventaja-fin">clientes<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Chat con tus clientes?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Conversa con tus clientes para resolver dudas antes y después de comprar.</span></span></span></span></li>
                                         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="ventaja">Carritos <span class="ventaja-fin">abandonados<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Carritos abandonados?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Ves quién dejó productos en su carrito y le recordamos terminar su compra.</span></span></span></span></li>
@@ -807,144 +807,49 @@
           <thead>
             <tr>
               <th scope="col"><span class="sr">Función</span></th>
-                              <th scope="col" class=""><b>Starter</b><small>$1,490/mes</small></th>
-                              <th scope="col" class=""><b>Básico</b><small>$3,790/mes</small></th>
-                              <th scope="col" class=""><b>Esencial</b><small>$5,790/mes</small></th>
-                              <th scope="col" class="is-featured"><b>Marketing</b><small>$8,490/mes</small></th>
-                              <th scope="col" class=""><b>Pro</b><small>$11,490/mes</small></th>
+                              <th scope="col" class="comp-plan" data-precio-comp="1490">
+                                    <b>Starter</b>
+                  <small class="comp-para">Para iniciar sin una gran inversión.</small>
+                  <span class="comp-precio">$<strong>1,490</strong>/mes</span>
+                  <small class="comp-bill">Facturado mensualmente</small>
+                  <small class="comp-com">+ 8% por venta</small>
+                  <a href="#contratar" class="btn btn-sm btn-ghost" data-plan-cta="starter">Elegir</a>
+                </th>
+                              <th scope="col" class="comp-plan" data-precio-comp="3790">
+                                    <b>Básico</b>
+                  <small class="comp-para">Para empezar a vender.</small>
+                  <span class="comp-precio">$<strong>3,790</strong>/mes</span>
+                  <small class="comp-bill">Facturado mensualmente</small>
+                  <small class="comp-com">Sin comisión</small>
+                  <a href="#contratar" class="btn btn-sm btn-ghost" data-plan-cta="basico">Elegir</a>
+                </th>
+                              <th scope="col" class="comp-plan" data-precio-comp="5790">
+                                    <b>Esencial</b>
+                  <small class="comp-para">Tu tienda con identidad propia.</small>
+                  <span class="comp-precio">$<strong>5,790</strong>/mes</span>
+                  <small class="comp-bill">Facturado mensualmente</small>
+                  <small class="comp-com">Sin comisión</small>
+                  <a href="#contratar" class="btn btn-sm btn-ghost" data-plan-cta="esencial">Elegir</a>
+                </th>
+                              <th scope="col" class="comp-plan is-featured" data-precio-comp="8490">
+                  <span class="comp-flag">Más elegido</span>                  <b>Marketing</b>
+                  <small class="comp-para">Tu tienda y tus redes, juntas.</small>
+                  <span class="comp-precio">$<strong>8,490</strong>/mes</span>
+                  <small class="comp-bill">Facturado mensualmente</small>
+                  <small class="comp-com">Sin comisión</small>
+                  <a href="#contratar" class="btn btn-sm btn-primary" data-plan-cta="marketing">Elegir</a>
+                </th>
+                              <th scope="col" class="comp-plan" data-precio-comp="11490">
+                                    <b>Pro</b>
+                  <small class="comp-para">Para marcas con alto volumen.</small>
+                  <span class="comp-precio">$<strong>11,490</strong>/mes</span>
+                  <small class="comp-bill">Facturado mensualmente</small>
+                  <small class="comp-com">Sin comisión</small>
+                  <a href="#contratar" class="btn btn-sm btn-ghost" data-plan-cta="pro">Elegir</a>
+                </th>
                           </tr>
           </thead>
-                      <tbody>
-              <tr class="comp-grupo"><th scope="rowgroup" colspan="6">Tienda</th></tr>
-                              <tr>
-                  <th scope="row"><span class="ventaja">Tienda con dominio y <span class="ventaja-fin">SSL<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Tienda con dominio y SSL?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Tu tienda en tu propio dominio (.com o .com.mx) con certificado de seguridad incluido.</span></span></span></span></th>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="is-featured">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                  </tr>
-                              <tr>
-                  <th scope="row"><span class="ventaja">Productos <span class="ventaja-fin">ilimitados<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Productos ilimitados?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Sube todos los productos que quieras, con fotos, variantes, precios y existencias.</span></span></span></span></th>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="is-featured">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                  </tr>
-                              <tr>
-                  <th scope="row"><span class="ventaja">Constructor de la <span class="ventaja-fin">página<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Constructor de la página?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Arma tu página de inicio con bloques: carruseles, banners, productos, marcas y más, sin programar.</span></span></span></span></th>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="is-featured">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                  </tr>
-                              <tr>
-                  <th scope="row"><span class="ventaja">Diseño para PC, tablet y <span class="ventaja-fin">celular<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Diseño para PC, tablet y celular?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Ajusta cómo se ve cada bloque en cada dispositivo, por separado.</span></span></span></span></th>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="is-featured">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                  </tr>
-                              <tr>
-                  <th scope="row"><span class="ventaja">Búsqueda con <span class="ventaja-fin">sugerencias<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Búsqueda con sugerencias?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Tus clientes encuentran productos mientras escriben.</span></span></span></span></th>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="is-featured">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                  </tr>
-                              <tr>
-                  <th scope="row"><span class="ventaja">Insignias en <span class="ventaja-fin">productos<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Insignias en productos?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Etiquetas como Nuevo, Oferta o Más vendido para destacar productos.</span></span></span></span></th>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="is-featured">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                  </tr>
-                              <tr>
-                  <th scope="row"><span class="ventaja">Aviso de privacidad y <span class="ventaja-fin">términos<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Aviso de privacidad y términos?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Páginas legales listas para tu tienda.</span></span></span></span></th>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="is-featured">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                  </tr>
-                          </tbody>
-                      <tbody>
-              <tr class="comp-grupo"><th scope="rowgroup" colspan="6">Ventas y pagos</th></tr>
+          <tbody>
                               <tr>
                   <th scope="row"><span class="ventaja">Comisión por <span class="ventaja-fin">venta<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Comisión por venta?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Porcentaje sobre cada venta concretada en tu tienda. Solo el plan Starter la cobra.</span></span></span></span></th>
                                       <td class="">
@@ -959,15 +864,31 @@
                       <span class="comp-txt">Sin comisión</span>                    </td>
                                   </tr>
                               <tr>
-                  <th scope="row"><span class="ventaja">Pagos con tarjeta y <span class="ventaja-fin">OXXO<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Pagos con tarjeta y OXXO?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Cobros con Mercado Pago: tarjeta de crédito, débito y OXXO. La pasarela cobra su propia comisión.</span></span></span></span></th>
+                  <th scope="row"><span class="ventaja">Publicaciones en <span class="ventaja-fin">redes<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Publicaciones en redes?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Diseñamos y publicamos contenido en Instagram, Facebook y TikTok. Tú lo apruebas antes.</span></span></span></span></th>
                                       <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                      <span class="comp-no" aria-label="No incluido"></span>
                                           </td>
                                       <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                      <span class="comp-no" aria-label="No incluido"></span>
                                           </td>
                                       <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                      <span class="comp-no" aria-label="No incluido"></span>
+                                          </td>
+                                      <td class="is-featured">
+                      <span class="comp-txt">8 al mes</span>                    </td>
+                                      <td class="">
+                      <span class="comp-txt">12 al mes</span>                    </td>
+                                  </tr>
+                              <tr>
+                  <th scope="row"><span class="ventaja">Branding de tu <span class="ventaja-fin">marca<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Branding de tu marca?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Logo, Misión, Visión, Banners y diseño.</span></span></span></span></th>
+                                      <td class="">
+                      <span class="comp-no" aria-label="No incluido"></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-no" aria-label="No incluido"></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-no" aria-label="No incluido"></span>
                                           </td>
                                       <td class="is-featured">
                       <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
@@ -977,15 +898,15 @@
                                           </td>
                                   </tr>
                               <tr>
-                  <th scope="row"><span class="ventaja">Reembolsos desde el <span class="ventaja-fin">panel<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Reembolsos desde el panel?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Devuelve un pago sin salir de tu panel.</span></span></span></span></th>
+                  <th scope="row"><span class="ventaja">Campañas de correo y <span class="ventaja-fin">newsletter<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Campañas de correo y newsletter?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Envía promociones a tus clientes y a tus suscriptores.</span></span></span></span></th>
                                       <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                      <span class="comp-no" aria-label="No incluido"></span>
                                           </td>
                                       <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                      <span class="comp-no" aria-label="No incluido"></span>
                                           </td>
                                       <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                      <span class="comp-no" aria-label="No incluido"></span>
                                           </td>
                                       <td class="is-featured">
                       <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
@@ -995,25 +916,7 @@
                                           </td>
                                   </tr>
                               <tr>
-                  <th scope="row"><span class="ventaja">Cupones de <span class="ventaja-fin">descuento<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Cupones de descuento?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Descuentos por porcentaje, monto fijo o envío gratis, con fechas de vigencia.</span></span></span></span></th>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="is-featured">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                  </tr>
-                              <tr>
-                  <th scope="row"><span class="ventaja">Carritos <span class="ventaja-fin">abandonados<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Carritos abandonados?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Ves quién dejó productos en su carrito y le recordamos terminar su compra.</span></span></span></span></th>
+                  <th scope="row"><span class="ventaja">Chat con tus <span class="ventaja-fin">clientes<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Chat con tus clientes?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Conversa con tus clientes para resolver dudas antes y después de comprar.</span></span></span></span></th>
                                       <td class="">
                       <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
                                           </td>
@@ -1030,104 +933,8 @@
                       <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
                                           </td>
                                   </tr>
-                          </tbody>
-                      <tbody>
-              <tr class="comp-grupo"><th scope="rowgroup" colspan="6">Pedidos y envíos</th></tr>
                               <tr>
-                  <th scope="row"><span class="ventaja">Gestión de <span class="ventaja-fin">pedidos<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Gestión de pedidos?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Estado, número de guía, notas y archivo de cada pedido.</span></span></span></span></th>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="is-featured">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                  </tr>
-                              <tr>
-                  <th scope="row"><span class="ventaja">Guías de <span class="ventaja-fin">envío<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Guías de envío?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Cotiza, genera e imprime guías con Skydropx desde el pedido.</span></span></span></span></th>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="is-featured">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                  </tr>
-                              <tr>
-                  <th scope="row"><span class="ventaja">Inventario con <span class="ventaja-fin">movimientos<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Inventario con movimientos?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Entradas, salidas y ajustes con historial y aviso de existencias bajas.</span></span></span></span></th>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="is-featured">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                  </tr>
-                              <tr>
-                  <th scope="row"><span class="ventaja">Carga masiva de <span class="ventaja-fin">productos<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Carga masiva de productos?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Importa tu catálogo desde Excel o CSV y sube fotos en lote o desde Google Drive.</span></span></span></span></th>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="is-featured">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                  </tr>
-                          </tbody>
-                      <tbody>
-              <tr class="comp-grupo"><th scope="rowgroup" colspan="6">Clientes</th></tr>
-                              <tr>
-                  <th scope="row"><span class="ventaja">CRM de <span class="ventaja-fin">clientes<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es CRM de clientes?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">La ficha de cada cliente: datos, direcciones, historial de pedidos y cuánto ha comprado.</span></span></span></span></th>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="is-featured">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                  </tr>
-                              <tr>
-                  <th scope="row"><span class="ventaja">Chat con tus <span class="ventaja-fin">clientes<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Chat con tus clientes?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Conversa con tus clientes para resolver dudas antes y después de comprar.</span></span></span></span></th>
+                  <th scope="row"><span class="ventaja">Carritos <span class="ventaja-fin">abandonados<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Carritos abandonados?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Ves quién dejó productos en su carrito y le recordamos terminar su compra.</span></span></span></span></th>
                                       <td class="">
                       <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
                                           </td>
@@ -1216,9 +1023,284 @@
                       <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
                                           </td>
                                   </tr>
-                          </tbody>
-                      <tbody>
-              <tr class="comp-grupo"><th scope="rowgroup" colspan="6">Marketing</th></tr>
+                              <tr>
+                  <th scope="row"><span class="ventaja">Soporte <span class="ventaja-fin">prioritario<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Soporte prioritario?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Tus solicitudes se atienden antes que las demás.</span></span></span></span></th>
+                                      <td class="">
+                      <span class="comp-no" aria-label="No incluido"></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-no" aria-label="No incluido"></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-no" aria-label="No incluido"></span>
+                                          </td>
+                                      <td class="is-featured">
+                      <span class="comp-no" aria-label="No incluido"></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                  </tr>
+                              <tr>
+                  <th scope="row"><span class="ventaja">Reporte <span class="ventaja-fin">mensual<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Reporte mensual?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Cada mes, un resumen de ventas, visitas y resultados de tus redes.</span></span></span></span></th>
+                                      <td class="">
+                      <span class="comp-no" aria-label="No incluido"></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-no" aria-label="No incluido"></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-no" aria-label="No incluido"></span>
+                                          </td>
+                                      <td class="is-featured">
+                      <span class="comp-no" aria-label="No incluido"></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                  </tr>
+                              <tr>
+                  <th scope="row"><span class="ventaja">Migración de <span class="ventaja-fin">productos<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Migración de productos?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Pasamos tus productos desde Mercado Libre, Amazon o Excel: $1,500 por cada 100 productos, en un solo pago.</span></span></span></span></th>
+                                      <td class="">
+                      <span class="comp-txt">$1,500 / 100 productos</span>                    </td>
+                                      <td class="">
+                      <span class="comp-txt">$1,500 / 100 productos</span>                    </td>
+                                      <td class="">
+                      <span class="comp-txt">$1,500 / 100 productos</span>                    </td>
+                                      <td class="is-featured">
+                      <span class="comp-txt">$1,500 / 100 productos</span>                    </td>
+                                      <td class="">
+                      <span class="comp-txt">$1,500 / 100 productos</span>                    </td>
+                                  </tr>
+                              <tr>
+                  <th scope="row"><span class="ventaja">Asistencia <span class="ventaja-fin">personalizada<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Asistencia personalizada?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Un asesor te acompaña de forma personal para resolver dudas, hacer cambios en tu tienda y planear tus ventas. Opcional, en cualquier plan.</span></span></span></span></th>
+                                      <td class="">
+                      <span class="comp-txt">$1,500/mes</span>                    </td>
+                                      <td class="">
+                      <span class="comp-txt">$1,500/mes</span>                    </td>
+                                      <td class="">
+                      <span class="comp-txt">$1,500/mes</span>                    </td>
+                                      <td class="is-featured">
+                      <span class="comp-txt">$1,500/mes</span>                    </td>
+                                      <td class="">
+                      <span class="comp-txt">$1,500/mes</span>                    </td>
+                                  </tr>
+                              <tr>
+                  <th scope="row"><span class="ventaja">Tienda con dominio y <span class="ventaja-fin">SSL<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Tienda con dominio y SSL?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Tu tienda en tu propio dominio (.com o .com.mx) con certificado de seguridad incluido.</span></span></span></span></th>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="is-featured">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                  </tr>
+                              <tr>
+                  <th scope="row"><span class="ventaja">Productos <span class="ventaja-fin">ilimitados<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Productos ilimitados?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Sube todos los productos que quieras, con fotos, variantes, precios y existencias.</span></span></span></span></th>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="is-featured">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                  </tr>
+                              <tr>
+                  <th scope="row"><span class="ventaja">CRM de <span class="ventaja-fin">clientes<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es CRM de clientes?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">La ficha de cada cliente: datos, direcciones, historial de pedidos y cuánto ha comprado.</span></span></span></span></th>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="is-featured">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                  </tr>
+                              <tr>
+                  <th scope="row"><span class="ventaja">Constructor de la <span class="ventaja-fin">página<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Constructor de la página?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Arma tu página de inicio con bloques: carruseles, banners, productos, marcas y más, sin programar.</span></span></span></span></th>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="is-featured">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                  </tr>
+                              <tr>
+                  <th scope="row"><span class="ventaja">Diseño para PC, tablet y <span class="ventaja-fin">celular<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Diseño para PC, tablet y celular?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Ajusta cómo se ve cada bloque en cada dispositivo, por separado.</span></span></span></span></th>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="is-featured">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                  </tr>
+                              <tr>
+                  <th scope="row"><span class="ventaja">Pagos con tarjeta y <span class="ventaja-fin">OXXO<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Pagos con tarjeta y OXXO?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Cobros con Mercado Pago: tarjeta de crédito, débito y OXXO. La pasarela cobra su propia comisión.</span></span></span></span></th>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="is-featured">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                  </tr>
+                              <tr>
+                  <th scope="row"><span class="ventaja">Cupones de <span class="ventaja-fin">descuento<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Cupones de descuento?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Descuentos por porcentaje, monto fijo o envío gratis, con fechas de vigencia.</span></span></span></span></th>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="is-featured">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                  </tr>
+                              <tr>
+                  <th scope="row"><span class="ventaja">Reembolsos desde el <span class="ventaja-fin">panel<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Reembolsos desde el panel?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Devuelve un pago sin salir de tu panel.</span></span></span></span></th>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="is-featured">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                  </tr>
+                              <tr>
+                  <th scope="row"><span class="ventaja">Gestión de <span class="ventaja-fin">pedidos<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Gestión de pedidos?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Estado, número de guía, notas y archivo de cada pedido.</span></span></span></span></th>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="is-featured">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                  </tr>
+                              <tr>
+                  <th scope="row"><span class="ventaja">Guías de <span class="ventaja-fin">envío<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Guías de envío?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Cotiza, genera e imprime guías con Skydropx desde el pedido.</span></span></span></span></th>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="is-featured">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                  </tr>
+                              <tr>
+                  <th scope="row"><span class="ventaja">Inventario con <span class="ventaja-fin">movimientos<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Inventario con movimientos?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Entradas, salidas y ajustes con historial y aviso de existencias bajas.</span></span></span></span></th>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="is-featured">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                  </tr>
+                              <tr>
+                  <th scope="row"><span class="ventaja">Carga masiva de <span class="ventaja-fin">productos<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Carga masiva de productos?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Importa tu catálogo desde Excel o CSV y sube fotos en lote o desde Google Drive.</span></span></span></span></th>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="is-featured">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                      <td class="">
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                                          </td>
+                                  </tr>
                               <tr>
                   <th scope="row"><span class="ventaja">Correos <span class="ventaja-fin">automáticos<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Correos automáticos?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Avisos al cliente de pedido recibido, pago confirmado, envío y entrega.</span></span></span></span></th>
                                       <td class="">
@@ -1256,15 +1338,15 @@
                                           </td>
                                   </tr>
                               <tr>
-                  <th scope="row"><span class="ventaja">Campañas de correo y <span class="ventaja-fin">newsletter<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Campañas de correo y newsletter?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Envía promociones a tus clientes y a tus suscriptores.</span></span></span></span></th>
+                  <th scope="row"><span class="ventaja">Búsqueda con <span class="ventaja-fin">sugerencias<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Búsqueda con sugerencias?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Tus clientes encuentran productos mientras escriben.</span></span></span></span></th>
                                       <td class="">
-                      <span class="comp-no" aria-label="No incluido"></span>
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
                                           </td>
                                       <td class="">
-                      <span class="comp-no" aria-label="No incluido"></span>
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
                                           </td>
                                       <td class="">
-                      <span class="comp-no" aria-label="No incluido"></span>
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
                                           </td>
                                       <td class="is-featured">
                       <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
@@ -1274,31 +1356,15 @@
                                           </td>
                                   </tr>
                               <tr>
-                  <th scope="row"><span class="ventaja">Publicaciones en <span class="ventaja-fin">redes<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Publicaciones en redes?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Diseñamos y publicamos contenido en Instagram, Facebook y TikTok. Tú lo apruebas antes.</span></span></span></span></th>
+                  <th scope="row"><span class="ventaja">Insignias en <span class="ventaja-fin">productos<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Insignias en productos?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Etiquetas como Nuevo, Oferta o Más vendido para destacar productos.</span></span></span></span></th>
                                       <td class="">
-                      <span class="comp-no" aria-label="No incluido"></span>
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
                                           </td>
                                       <td class="">
-                      <span class="comp-no" aria-label="No incluido"></span>
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
                                           </td>
                                       <td class="">
-                      <span class="comp-no" aria-label="No incluido"></span>
-                                          </td>
-                                      <td class="is-featured">
-                      <span class="comp-txt">8 al mes</span>                    </td>
-                                      <td class="">
-                      <span class="comp-txt">12 al mes</span>                    </td>
-                                  </tr>
-                              <tr>
-                  <th scope="row"><span class="ventaja">Branding de tu <span class="ventaja-fin">marca<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Branding de tu marca?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Logo, Misión, Visión, Banners y diseño.</span></span></span></span></th>
-                                      <td class="">
-                      <span class="comp-no" aria-label="No incluido"></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-no" aria-label="No incluido"></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-no" aria-label="No incluido"></span>
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
                                           </td>
                                       <td class="is-featured">
                       <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
@@ -1307,60 +1373,26 @@
                       <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
                                           </td>
                                   </tr>
-                          </tbody>
-                      <tbody>
-              <tr class="comp-grupo"><th scope="rowgroup" colspan="6">Servicio</th></tr>
                               <tr>
-                  <th scope="row"><span class="ventaja">Migración de <span class="ventaja-fin">productos<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Migración de productos?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Pasamos tus productos desde Mercado Libre, Amazon o Excel: $1,500 por cada 100 productos, en un solo pago.</span></span></span></span></th>
+                  <th scope="row"><span class="ventaja">Aviso de privacidad y <span class="ventaja-fin">términos<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Aviso de privacidad y términos?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Páginas legales listas para tu tienda.</span></span></span></span></th>
                                       <td class="">
-                      <span class="comp-txt">Pago único</span>                    </td>
-                                      <td class="">
-                      <span class="comp-txt">Pago único</span>                    </td>
-                                      <td class="">
-                      <span class="comp-txt">Pago único</span>                    </td>
-                                      <td class="is-featured">
-                      <span class="comp-txt">Pago único</span>                    </td>
-                                      <td class="">
-                      <span class="comp-txt">Pago único</span>                    </td>
-                                  </tr>
-                              <tr>
-                  <th scope="row"><span class="ventaja">Soporte <span class="ventaja-fin">prioritario<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Soporte prioritario?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Tus solicitudes se atienden antes que las demás.</span></span></span></span></th>
-                                      <td class="">
-                      <span class="comp-no" aria-label="No incluido"></span>
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
                                           </td>
                                       <td class="">
-                      <span class="comp-no" aria-label="No incluido"></span>
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
                                           </td>
                                       <td class="">
-                      <span class="comp-no" aria-label="No incluido"></span>
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
                                           </td>
                                       <td class="is-featured">
-                      <span class="comp-no" aria-label="No incluido"></span>
+                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
                                           </td>
                                       <td class="">
                       <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
                                           </td>
                                   </tr>
-                              <tr>
-                  <th scope="row"><span class="ventaja">Reporte <span class="ventaja-fin">mensual<span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es Reporte mensual?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Cada mes, un resumen de ventas, visitas y resultados de tus redes.</span></span></span></span></th>
-                                      <td class="">
-                      <span class="comp-no" aria-label="No incluido"></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-no" aria-label="No incluido"></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-no" aria-label="No incluido"></span>
-                                          </td>
-                                      <td class="is-featured">
-                      <span class="comp-no" aria-label="No incluido"></span>
-                                          </td>
-                                      <td class="">
-                      <span class="comp-si" aria-label="Incluido"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-                                          </td>
-                                  </tr>
-                          </tbody>
-                  </table>
+                        </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -1410,7 +1442,7 @@
             <div class="seg seg-sm" data-seg="venta-pago">
               <span class="seg-pill" aria-hidden="true"></span>
               <button type="button" class="seg-btn is-active" data-value="mensual">Mensual</button>
-              <button type="button" class="seg-btn" data-value="anual">Anual · 1 mes gratis</button>
+                            <button type="button" class="seg-btn" data-value="anual">Anual · 2 meses gratis</button>
             </div>
           </div>
         </div>
@@ -1427,6 +1459,16 @@
             <small class="venta-nota">$1,500 por cada 100 productos, en un solo pago. Opcional.</small>
           </div>
         </div>
+
+        <div class="venta-paso">
+          <span class="venta-n">4</span>
+          <div class="venta-cuerpo">
+            <b class="venta-t">Asistencia personalizada <span class="ayuda" tabindex="0" role="button" aria-label="¿Qué es la asistencia personalizada?"><i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">Un asesor te acompaña de forma personal para resolver dudas, hacer cambios en tu tienda y planear tus ventas. Opcional, en cualquier plan.</span></span></b>
+            <button type="button" class="venta-switch" role="switch" aria-checked="false" data-asistencia>
+              <i aria-hidden="true"></i><span>Agregar por $1,500 al mes</span>
+            </button>
+          </div>
+        </div>
       </div>
 
       <aside class="venta-total" aria-live="polite">
@@ -1434,6 +1476,7 @@
         <dl>
           <div><dt data-v-plan>Plan Esencial · mensual</dt><dd data-v-plan-precio>$5,790</dd></div>
           <div class="venta-linea-mig" data-v-mig-fila hidden><dt data-v-mig>Migración</dt><dd data-v-mig-precio>$0</dd></div>
+          <div data-v-asis-fila hidden><dt>Asistencia personalizada · mensual</dt><dd>$1,500</dd></div>
         </dl>
         <div class="venta-hoy">
           <span>Total a pagar hoy</span>
@@ -1576,8 +1619,8 @@
   </a>
 
   <script>
-    window.MONACO = {"planes":[{"id":"starter","nombre":"Starter","precio":1490,"comision":8},{"id":"basico","nombre":"Básico","precio":3790,"comision":0},{"id":"esencial","nombre":"Esencial","precio":5790,"comision":0},{"id":"marketing","nombre":"Marketing","precio":8490,"comision":0},{"id":"pro","nombre":"Pro","precio":11490,"comision":0}],"mesesAnual":11,"migracion":{"bloque":100,"precio":1500},"whatsapp":"526311947463","contrato":"contrato-%s.html"};
+    window.MONACO = {"planes":[{"id":"starter","nombre":"Starter","precio":1490,"comision":8},{"id":"basico","nombre":"Básico","precio":3790,"comision":0},{"id":"esencial","nombre":"Esencial","precio":5790,"comision":0},{"id":"marketing","nombre":"Marketing","precio":8490,"comision":0},{"id":"pro","nombre":"Pro","precio":11490,"comision":0}],"mesesAnual":10,"migracion":{"bloque":100,"precio":1500},"asistencia":1500,"whatsapp":"526311947463","contrato":"contrato-%s.html"};
   </script>
-  <script src="assets/js/main.js?v=1795403088" defer></script>
+  <script src="assets/js/main.js?v=1795404156" defer></script>
 </body>
 </html>
