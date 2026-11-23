@@ -11,17 +11,18 @@ $avisos = [
 
   <div class="container hero-lay">
     <div class="hero-copy">
-      <h1 class="hero-title" data-split>Tu tienda en línea, <span class="serif">sin comisiones<i class="pt">.</i></span></h1>
+      <h1 class="hero-title" data-split>Tu tienda en línea, <span class="serif">lista para vender<i class="pt">.</i></span></h1>
 
-      <p class="hero-sub" data-reveal data-delay="300">Tienda, pagos y envíos listos para vender. Sin programar.</p>
+      <p class="hero-sub" data-reveal data-delay="300">Tienda, pagos y envíos en un solo lugar. Sin programar.</p>
 
       <div class="hero-actions" data-reveal data-delay="420">
         <a href="#planes" class="btn btn-primary btn-lg">Ver planes <?= icono('arrow-right', 18) ?></a>
-        <a href="#dispositivos" class="btn btn-ghost btn-lg">Ver cómo se ve</a>
+        <a href="#tiendas" class="btn btn-ghost btn-lg">Ver tiendas</a>
       </div>
 
       <ul class="hero-trust" data-reveal data-delay="520">
-        <li>Sin comisión por venta</li>
+        <li>Desde $<?= dinero($CFG['planes'][0]['precio']) ?> al mes</li>
+        <li>Productos ilimitados</li>
         <li>Dominio y SSL incluidos</li>
         <li>Soporte en español e inglés</li>
       </ul>
@@ -53,7 +54,7 @@ $avisos = [
       <div class="money-total">
         <small>Ventas de hoy</small>
         <strong data-money-total>$4,729</strong>
-        <span><b data-money-n>3</b> pedidos, sin comisiones</span>
+        <span><b data-money-n>3</b> pedidos hoy</span>
       </div>
     </div>
   </div>

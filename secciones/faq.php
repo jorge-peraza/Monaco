@@ -10,7 +10,7 @@
 
     <div class="faq-list">
       <?php foreach ($CFG['faq'] as $i => [$pregunta, $respuesta]): ?>
-        <details class="faq-item" data-reveal data-delay="<?= $i * 60 ?>"<?= $i === 0 ? ' open' : '' ?>>
+        <details class="faq-item" data-reveal data-delay="<?= $i * 60 ?>">
           <summary><?= e($pregunta) ?><span class="faq-ic" aria-hidden="true"><?= icono('plus', 16) ?></span></summary>
           <div class="faq-body"><p><?= e($respuesta) ?></p></div>
         </details>

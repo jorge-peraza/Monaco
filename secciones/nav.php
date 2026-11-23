@@ -9,7 +9,7 @@
     </a>
 
     <nav class="nav-links" aria-label="Principal">
-      <a href="#dispositivos">Vista previa</a>
+      <a href="#tiendas">Tiendas</a>
       <a href="#temas">Personalización</a>
       <a href="#funciones">Funciones</a>
       <a href="#migracion">Migración</a>
@@ -18,7 +18,7 @@
 
     <div class="nav-cta">
       <a href="#contacto" class="btn btn-ghost btn-sm">Agendar demo</a>
-      <a href="#planes" class="btn btn-primary btn-sm">Empezar</a>
+      <a href="#contratar" class="btn btn-primary btn-sm">Contratar</a>
     </div>
 
     <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-movil">
@@ -27,13 +27,13 @@
   </div>
 
   <div class="nav-movil" id="nav-movil">
-    <a href="#dispositivos">Vista previa</a>
+    <a href="#tiendas">Tiendas</a>
     <a href="#temas">Personalización</a>
     <a href="#funciones">Funciones</a>
-    <a href="#integraciones">Integraciones</a>
+    <a href="#chat">Chat</a>
     <a href="#migracion">Migración</a>
     <a href="#marketing">Marketing</a>
     <a href="#planes">Planes</a>
-    <a href="#contacto" class="btn btn-primary">Agendar demo</a>
+    <a href="#contratar" class="btn btn-primary">Contratar</a>
   </div>
 </header>

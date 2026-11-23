@@ -10,7 +10,7 @@
         <p><?= e($marca['lema']) ?></p>
       </div>
       <div class="footer-cols">
-        <div><b>Producto</b><a href="#dispositivos">Vista previa</a><a href="#temas">Personalización</a><a href="#funciones">Funciones</a><a href="#integraciones">Integraciones</a></div>
+        <div><b>Producto</b><a href="#tiendas">Tiendas</a><a href="#temas">Personalización</a><a href="#funciones">Funciones</a><a href="#integraciones">Integraciones</a></div>
         <div><b>Servicios</b><a href="#migracion">Migración</a><a href="#marketing">Marketing</a><a href="#planes">Planes</a><a href="#planes">Agencias</a></div>
         <div><b>Contacto</b><a href="mailto:<?= e($CFG['contacto']['correo']) ?>"><?= e($CFG['contacto']['correo']) ?></a><a href="<?= whatsapp() ?>" target="_blank" rel="noopener">WhatsApp</a><a href="#faq">Preguntas frecuentes</a></div>
       </div>

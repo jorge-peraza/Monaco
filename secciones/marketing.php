@@ -5,7 +5,7 @@ $posts = [
     ['reloj-vertice-piel',   35,  '3 meses sin intereses',            'Reloj Vértice con correa de piel. Liga en la bio.'],
 ];
 $dias = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
-$agenda = [2 => ['post', 'Producto'], 4 => ['reel', 'Reel'], 6 => ['story', 'Historia'], 9 => ['post', 'Oferta'], 11 => ['reel', 'Tutorial'], 13 => ['story', 'Encuesta'], 16 => ['post', 'Lanzamiento'], 18 => ['reel', 'Detrás de cámaras'], 20 => ['story', 'Cupón'], 23 => ['post', 'Testimonio'], 25 => ['reel', 'Unboxing'], 27 => ['story', 'Promo fin de mes']];
+$agenda = [3 => ['post', 'Producto'], 6 => ['reel', 'Reel'], 10 => ['story', 'Oferta'], 13 => ['post', 'Tutorial'], 17 => ['reel', 'Lanzamiento'], 20 => ['story', 'Cupón'], 24 => ['post', 'Testimonio'], 27 => ['reel', 'Unboxing']];
 ?>
 <section class="section ajusta marketing" id="marketing">
   <div class="container mkt-grid">
@@ -13,7 +13,7 @@ $agenda = [2 => ['post', 'Producto'], 4 => ['reel', 'Reel'], 6 => ['story', 'His
       <div class="section-head" data-reveal>
         <?= cap('Marketing') ?>
         <h2>También llevamos <span class="serif">tus redes</span><?= pt() ?></h2>
-        <p>Incluido en los planes Marketing y Pro.</p>
+        <p>8 publicaciones al mes en Marketing y 12 en Pro.</p>
       </div>
       <ul class="mkt-list">
         <li data-reveal><b>Calendario mensual</b>Lo apruebas antes de publicar.</li>
@@ -41,7 +41,7 @@ $agenda = [2 => ['post', 'Producto'], 4 => ['reel', 'Reel'], 6 => ['story', 'His
       </div>
 
       <div class="calendar">
-        <div class="calendar-head"><b>Noviembre</b><span>12 publicaciones</span></div>
+        <div class="calendar-head"><b>Noviembre</b><span><?= count($agenda) ?> publicaciones</span></div>
         <div class="calendar-grid">
           <?php foreach ($dias as $d): ?><span class="cal-dow"><?= $d ?></span><?php endforeach; ?>
           <?php for ($dia = 1; $dia <= 28; $dia++): ?>

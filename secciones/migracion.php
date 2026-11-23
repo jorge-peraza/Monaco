@@ -12,6 +12,7 @@ $ml = array_slice(productos_demo(), 0, 4);
     <div class="section-head" data-reveal>
       <?= cap('Migración') ?>
       <h2>Tus productos, <span class="serif">sin recapturar</span><?= pt() ?></h2>
+      <p>$<?= dinero($CFG['migracion']['precio']) ?> por cada <?= $CFG['migracion']['bloque'] ?> productos, en un solo pago.</p>
     </div>
 
     <div class="mig-visual" data-reveal data-mig data-paso="0">

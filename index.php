@@ -32,15 +32,15 @@ $marca = $CFG['marca'];
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
   <nav class="capitulos" aria-label="Secciones de la página">
-    <?php foreach (['ahorro' => 'Comisiones', 'dispositivos' => 'Vista previa', 'temas' => 'Personalización', 'funciones' => 'Funciones', 'integraciones' => 'Integraciones', 'migracion' => 'Migración', 'marketing' => 'Marketing', 'planes' => 'Planes', 'faq' => 'Dudas', 'contacto' => 'Empieza hoy'] as $id => $nombre): ?>
+    <?php foreach (['starter' => 'Starter', 'tiendas' => 'Tiendas', 'temas' => 'Personalización', 'funciones' => 'Funciones', 'chat' => 'Chat', 'integraciones' => 'Integraciones', 'migracion' => 'Migración', 'marketing' => 'Marketing', 'planes' => 'Planes', 'contratar' => 'Contratar', 'faq' => 'Dudas', 'contacto' => 'Empieza hoy'] as $id => $nombre): ?>
       <a href="#<?= $id ?>"><i></i><span><?= e($nombre) ?></span></a>
     <?php endforeach; ?>
   </nav>
 
   <?php
   foreach ([
-      'nav', 'hero', 'marquee', 'manifiesto', 'ahorro', 'dispositivos',
-      'temas', 'funciones', 'integraciones', 'migracion', 'marketing', 'planes', 'faq', 'contacto', 'footer',
+      'nav', 'hero', 'marquee', 'manifiesto', 'starter', 'tiendas', 'temas', 'funciones', 'chat',
+      'integraciones', 'migracion', 'marketing', 'planes', 'venta', 'faq', 'contacto', 'footer',
   ] as $seccion) {
       require __DIR__ . '/secciones/' . $seccion . '.php';
   }
@@ -52,8 +52,11 @@ $marca = $CFG['marca'];
 
   <script>
     window.MONACO = <?= json_encode([
-        'planes'   => array_map(fn ($p) => ['id' => $p['id'], 'nombre' => $p['nombre'], 'precio' => $p['precio']], $CFG['planes']),
+        'planes'   => array_map(fn ($p) => ['id' => $p['id'], 'nombre' => $p['nombre'], 'precio' => $p['precio'], 'comision' => $p['comision']], $CFG['planes']),
         'mesesAnual' => $CFG['meses_anual'],
+        'migracion'  => $CFG['migracion'],
+        'whatsapp'   => $CFG['contacto']['whatsapp'],
+        'contrato'   => ESTATICO ? 'contrato-%s.html' : 'contrato.php?plan=%s',
     ], JSON_UNESCAPED_UNICODE) ?>;
   </script>
   <script src="<?= asset('assets/js/main.js') ?>" defer></script>

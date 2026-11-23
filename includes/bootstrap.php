@@ -54,6 +54,26 @@ function pt(): string
     return '<i class="pt">.</i>';
 }
 
+/** Signo de interrogación con la explicación que aparece al pasar el ratón o al tocarlo. */
+function ayuda(string $texto, string $nombre = ''): string
+{
+    return '<span class="ayuda" tabindex="0" role="button" aria-label="' . e('¿Qué es ' . $nombre . '?') . '">'
+        . '<i aria-hidden="true">?</i><span class="ayuda-tip" role="tooltip">' . e($texto) . '</span></span>';
+}
+
+/** Nombre de una ventaja con su ayuda. $texto cambia el nombre mostrado. */
+function ventaja(string $clave, ?string $texto = null): string
+{
+    global $CFG;
+    [$nombre, $explica] = $CFG['ventajas'][$clave];
+    $visible = $texto ?? $nombre;
+    // La última palabra viaja junto al signo para que nunca quede solo en otra línea.
+    $corte = strrpos($visible, ' ');
+    $inicio = $corte === false ? '' : substr($visible, 0, $corte + 1);
+    $fin = $corte === false ? $visible : substr($visible, $corte + 1);
+    return '<span class="ventaja">' . e($inicio) . '<span class="ventaja-fin">' . e($fin) . ayuda($explica, $visible) . '</span></span>';
+}
+
 require __DIR__ . '/iconos.php';
 
 /** Productos ficticios de ejemplo: [nombre, precio, imagen en monaco/img/productos, tono]. */
