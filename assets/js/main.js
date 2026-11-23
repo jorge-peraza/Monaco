@@ -327,87 +327,6 @@
   }
 
   /* ------------------------------------------------------------------------
-     Vista previa por dispositivo (PC / Tablet / Móvil)
-     ------------------------------------------------------------------------ */
-  const frame = $('#dev-frame');
-  if (frame) {
-    const stage = $('.dev-stage');
-    const screen = $('.dev-screen', frame);
-    const caption = $('#dev-caption');
-    const url = $('#dev-url');
-    const DEV = {
-      pc:     { w: 1120, vw: 1440, ratio: 0.625, pad: 0,  nombre: 'Escritorio', tienda: 'Menú de departamentos, buscador amplio y carruseles', panel: 'Barra lateral completa y métricas en una fila' },
-      tablet: { w: 640,  vw: 820,  ratio: 1.3,   pad: 16, nombre: 'Tablet',     tienda: 'Misma tienda, acomodada al ancho de la pantalla',     panel: 'Métricas en dos columnas' },
-      movil:  { w: 320,  vw: 390,  ratio: 1.95,  pad: 12, nombre: 'Móvil',      tienda: 'Menú lateral, buscador fijo y dos productos por fila', panel: 'Menú plegable para administrar desde el celular' },
-    };
-    let device = 'pc';
-    let view = 'tienda';
-
-    const layout = () => {
-      const c = DEV[device];
-      const barH = device === 'movil' ? 70 : 42;
-      const maxH = clamp(innerHeight - 76, 380, 640);
-      const byHeight = (maxH - barH) / c.ratio + c.pad * 2 + 2;
-      const fw = Math.round(Math.min(stage.clientWidth, c.w, device === 'pc' ? Infinity : byHeight));
-      const bw = fw - c.pad * 2 - 2;
-      let bh = Math.round(bw * c.ratio);
-      if (device === 'pc') bh = Math.min(bh, Math.round(maxH - barH));
-      frame.style.width = fw + 'px';
-      screen.style.height = bh + 'px';
-      // En celular el escenario se ciñe al marco para no dejar un hueco bajo los controles.
-      stage.style.height = (innerWidth <= 900 ? bh + barH + c.pad * 2 + 2 : maxH) + 'px';
-    };
-    const describe = () => {
-      const c = DEV[device];
-      caption.innerHTML = `<b>${c.nombre}.</b> ${c[view]}.`;
-      url.textContent = view === 'panel' ? 'tutienda.com.mx/admin' : 'tutienda.com.mx';
-    };
-    const aplicar = () => {
-      frame.dataset.device = device;
-      stage.dataset.device = device;
-      layout();
-      describe();
-      requestAnimationFrame(loadNearLives);
-    };
-    // Cambio de dispositivo: el marco gira de lado (como si se volteara),
-    // cambia de forma mientras no se ve y termina de girar ya convertido.
-    let giro = null;
-    onSeg('device', value => {
-      if (value === device) return;
-      const hacia = ['pc', 'tablet', 'movil'].indexOf(value) > ['pc', 'tablet', 'movil'].indexOf(device) ? 1 : -1;
-      device = value;
-      if (reduce || !frame.animate) { aplicar(); return; }
-      giro?.cancel();
-      let hecho = false;
-      const segundaMitad = () => {
-        if (hecho) return;
-        hecho = true;
-        frame.classList.add('no-anim');
-        aplicar();
-        void frame.offsetWidth;
-        frame.classList.remove('no-anim');
-        const primera = giro;
-        giro = frame.animate([{ transform: `rotateY(${-90 * hacia}deg)` }, { transform: 'rotateY(0deg)' }], { duration: 520, easing: 'cubic-bezier(.22,1,.36,1)' });
-        primera.cancel();
-      };
-      giro = frame.animate([{ transform: 'rotateY(0deg)' }, { transform: `rotateY(${90 * hacia}deg)` }], { duration: 260, easing: 'cubic-bezier(.55,0,1,.45)', fill: 'forwards' });
-      giro.onfinish = segundaMitad;
-      // Respaldo: si el navegador pausa la animación, el cambio igual se aplica.
-      setTimeout(segundaMitad, 320);
-    });
-    onSeg('device-view', value => {
-      view = value;
-      frame.dataset.view = view;
-      describe();
-    });
-
-    new ResizeObserver(layout).observe(stage);
-    addEventListener('resize', layout);
-    layout();
-    describe();
-  }
-
-  /* ------------------------------------------------------------------------
      Personalización: un editor real, manejado por un cursor. Recorre la página,
      selecciona un bloque, el panel cambia y cada ajuste se aplica a la vista.
      ------------------------------------------------------------------------ */
@@ -828,30 +747,15 @@
   /* ------------------------------------------------------------------------
      Calculadora de comisiones
      ------------------------------------------------------------------------ */
-  const ventas = $('#calc-ventas');
-  if (ventas) {
-    const com = $('#calc-com');
-    const perdida = $('#calc-perdida');
-    const paint = input => {
-      const p = (input.value - input.min) / (input.max - input.min) * 100;
-      input.style.setProperty('--fill', p + '%');
-    };
-    const calc = () => {
-      paint(ventas);
-      paint(com);
-      $('#calc-ventas-out').textContent = pesos(+ventas.value);
-      $('#calc-com-out').textContent = com.value + '%';
-      tween(perdida, Math.round(ventas.value * 12 * com.value / 100), pesos);
-    };
-    perdida._v = 90000;
-    [ventas, com].forEach(i => i.addEventListener('input', calc));
-    calc();
-  }
-
   /* ------------------------------------------------------------------------
      Planes: mensual / anual
      ------------------------------------------------------------------------ */
   const plans = $$('.plan[data-precio]');
+  // Mantiene en el mismo valor dos controles segmentados (sin rebotar eventos).
+  const igualar = (nombre, valor) => {
+    const s = seg(nombre);
+    if (s && $('.seg-btn.is-active', s)?.dataset.value !== valor) s.segSelect(valor);
+  };
   onSeg('billing', modo => {
     plans.forEach(card => {
       const precio = +card.dataset.precio;
@@ -862,13 +766,117 @@
         ? `${pesos(precio * D.mesesAnual)} al año · ahorras ${pesos(precio * (12 - D.mesesAnual))}`
         : 'Facturado mensualmente';
     });
+    igualar('venta-pago', modo);
   });
   plans.forEach(card => { const a = $('.plan-amount', card); a._v = +card.dataset.precio; });
 
+  /* ------------------------------------------------------------------------
+     Contratar: plan, forma de pago, migración (+/−) y total al instante
+     ------------------------------------------------------------------------ */
+  const venta = $('[data-venta]');
+  let elegirPlan = () => {};
+  if (venta) {
+    const P = Object.fromEntries(D.planes.map(p => [p.id, p]));
+    const M = D.migracion;
+    const pick = s => $(s, venta);
+    const botones = $$('.venta-plan', venta);
+    const total = pick('[data-v-total]');
+    let plan = pick('.venta-plan.is-on').dataset.plan;
+    let anual = false;
+    let bloques = 0;
+    total._v = P[plan].precio;
+    const pintar = () => {
+      const p = P[plan];
+      const periodo = anual ? p.precio * D.mesesAnual : p.precio;
+      const productos = bloques * M.bloque;
+      const migracion = bloques * M.precio;
+      botones.forEach(b => {
+        const on = b.dataset.plan === plan;
+        b.classList.toggle('is-on', on);
+        b.setAttribute('aria-checked', String(on));
+      });
+      pick('[data-v-plan]').textContent = `Plan ${p.nombre} · ${anual ? 'anual' : 'mensual'}`;
+      pick('[data-v-plan-precio]').textContent = pesos(periodo);
+      pick('[data-v-mig-fila]').hidden = !bloques;
+      pick('[data-v-mig]').textContent = `Migración · ${entero(productos)} productos`;
+      pick('[data-v-mig-precio]').textContent = pesos(migracion);
+      $('[data-mig-cant] b', venta).textContent = entero(productos);
+      $('[data-mig="-1"]', venta).disabled = !bloques;
+      tween(total, periodo + migracion, pesos, 500);
+      pick('[data-v-despues]').textContent = anual ? `Después pagas ${pesos(periodo)} al año.` : `Después pagas ${pesos(p.precio)} al mes.`;
+      const com = pick('[data-v-comision]');
+      com.hidden = !p.comision;
+      com.textContent = p.comision ? `Más ${p.comision}% de cada venta concretada.` : '';
+      pick('[data-v-contrato]').href = D.contrato.replace('%s', plan);
+      const texto = [
+        `Hola, quiero contratar el plan ${p.nombre} (${anual ? 'anual' : 'mensual'}) de Monaco Services.`,
+        p.comision ? `Entiendo que el plan incluye ${p.comision}% de comisión por venta concretada.` : '',
+        bloques ? `Migración de ${entero(productos)} productos: ${pesos(migracion)}.` : '',
+        `Total a pagar hoy: ${pesos(periodo + migracion)}.`,
+      ].filter(Boolean).join('\n');
+      pick('[data-v-contratar]').href = `https://wa.me/${D.whatsapp}?text=${encodeURIComponent(texto)}`;
+    };
+    botones.forEach(b => b.addEventListener('click', () => { plan = b.dataset.plan; pintar(); }));
+    $$('[data-mig]', venta).forEach(b => b.addEventListener('click', () => {
+      bloques = clamp(bloques + Number(b.dataset.mig), 0, 100);
+      pintar();
+    }));
+    onSeg('venta-pago', modo => { anual = modo === 'anual'; pintar(); igualar('billing', modo); });
+    elegirPlan = id => { if (P[id]) { plan = id; pintar(); } };
+    pintar();
+  }
+
   $$('[data-plan-cta]').forEach(a => a.addEventListener('click', () => {
+    elegirPlan(a.dataset.planCta);
     const sel = $('#f-plan');
     if (sel) sel.value = a.dataset.planCta;
   }));
+
+  /* ------------------------------------------------------------------------
+     Signos de interrogación: al pasar el ratón, con el teclado o al tocar
+     ------------------------------------------------------------------------ */
+  const ayudas = $$('.ayuda');
+  // Recorre la explicación para que nunca se salga de la pantalla.
+  const ajustarAyuda = a => {
+    const tip = $('.ayuda-tip', a);
+    if (!tip || a.closest('.comp-tabla')) return;
+    tip.style.setProperty('--dx', '0px');
+    const r = tip.getBoundingClientRect();
+    const dx = r.left < 12 ? 12 - r.left : r.right > innerWidth - 12 ? innerWidth - 12 - r.right : 0;
+    tip.style.setProperty('--dx', dx + 'px');
+  };
+  ayudas.forEach(a => {
+    a.addEventListener('pointerenter', () => ajustarAyuda(a));
+    a.addEventListener('focus', () => ajustarAyuda(a));
+  });
+  document.addEventListener('click', e => {
+    const a = e.target.closest('.ayuda');
+    ayudas.forEach(x => { if (x !== a) x.classList.remove('is-on'); });
+    if (!a) return;
+    e.preventDefault();
+    ajustarAyuda(a);
+    a.classList.toggle('is-on');
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') ayudas.forEach(x => x.classList.remove('is-on')); });
+
+  /* ------------------------------------------------------------------------
+     Chat: los mensajes entran uno tras otro mientras la sección se ve
+     ------------------------------------------------------------------------ */
+  const chat = $('[data-chat]');
+  if (chat) {
+    const msgs = $$('.chat-msg', chat);
+    let n = 0, t = null;
+    const siguiente = () => {
+      if (n >= msgs.length) {
+        t = setTimeout(() => { msgs.forEach(m => m.classList.remove('is-in')); n = 0; siguiente(); }, 3600);
+        return;
+      }
+      msgs[n++].classList.add('is-in');
+      t = setTimeout(siguiente, n === 1 ? 900 : 1500);
+    };
+    if (reduce) msgs.forEach(m => m.classList.add('is-in'));
+    else onVisible([chat], (_, v) => { clearTimeout(t); if (v) t = setTimeout(siguiente, 400); }, { threshold: 0.35 }, false);
+  }
 
   /* ------------------------------------------------------------------------
      Marketing: carrusel de publicaciones
@@ -913,11 +921,29 @@
   }
 
   /* ------------------------------------------------------------------------
-     FAQ: solo una respuesta abierta a la vez
+     FAQ: todas cerradas; se abren y cierran deslizándose, una a la vez
      ------------------------------------------------------------------------ */
   const faqs = $$('.faq-item');
-  faqs.forEach(d => d.addEventListener('toggle', () => {
-    if (d.open) faqs.forEach(o => { if (o !== d) o.open = false; });
+  const abrirFaq = d => {
+    const cuerpo = $('.faq-body', d);
+    d.open = true;
+    if (reduce) return;
+    d._anim = cuerpo.animate([{ height: '0px' }, { height: cuerpo.scrollHeight + 'px' }], { duration: 480, easing: 'cubic-bezier(.22,1,.36,1)' });
+    d._anim.onfinish = d._anim.oncancel = () => { d._anim = null; };
+  };
+  const cerrarFaq = d => {
+    const cuerpo = $('.faq-body', d);
+    if (reduce) { d.open = false; return; }
+    d.classList.add('is-cerrando');
+    d._anim = cuerpo.animate([{ height: cuerpo.offsetHeight + 'px' }, { height: '0px' }], { duration: 360, easing: 'cubic-bezier(.65,0,.35,1)' });
+    d._anim.onfinish = () => { d.open = false; d.classList.remove('is-cerrando'); d._anim = null; };
+  };
+  faqs.forEach(d => $('summary', d).addEventListener('click', e => {
+    e.preventDefault();
+    if (d._anim) return;
+    if (d.open) { cerrarFaq(d); return; }
+    faqs.forEach(o => { if (o !== d && o.open && !o._anim) cerrarFaq(o); });
+    abrirFaq(d);
   }));
 
   /* ------------------------------------------------------------------------
