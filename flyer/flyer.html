@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <title>Monaco Services — Flyer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+  <style>
+    /* Hoja tamaño carta (8.5 × 11 in = 816 × 1056 px a 96 ppp). */
+    @page { size: 8.5in 11in; margin: 0; }
+    :root { --bg: #08090c; --text: #f3efe8; --muted: #a5a3ab; --dim: #6f6e76; --line: rgba(255,255,255,.12); --accent: #e5383b; --ok: #4fb286; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: #2a2b30; }
+    body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--text); -webkit-font-smoothing: antialiased; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .hoja { position: relative; width: 816px; height: 1056px; margin: 0 auto; padding: 56px 56px 48px; overflow: hidden; background: var(--bg); display: flex; flex-direction: column; }
+    .hoja::before { content: ''; position: absolute; width: 760px; height: 760px; right: -300px; top: -240px; border-radius: 50%; background: radial-gradient(circle, rgba(229,56,59,.32), transparent 62%); }
+    .hoja > * { position: relative; flex: none; }
+
+    .cab { display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 700; letter-spacing: -.03em; }
+    .logo em { font-style: normal; font-weight: 500; color: var(--muted); }
+    .etiqueta { padding: 7px 14px; border-radius: 99px; border: 1px solid var(--line); color: var(--muted); font-size: 12.5px; font-weight: 500; }
+
+    h1 { margin-top: 26px; font-size: 64px; line-height: .98; letter-spacing: -.045em; font-weight: 700; }
+    h1 span { color: var(--muted); }
+    h1 i { font-style: normal; color: var(--accent); }
+    .sub { margin-top: 16px; max-width: 600px; color: var(--text); font-size: 20px; font-weight: 600; line-height: 1.35; letter-spacing: -.015em; }
+    .sub b { color: var(--accent); font-weight: 700; }
+
+    .medio { display: grid; grid-template-columns: 1fr 250px; gap: 32px; align-items: center; margin-top: 8px; }
+    .puntos { display: flex; flex-direction: column; }
+    .puntos li { list-style: none; display: flex; flex-direction: column; padding: 7px 0; border-top: 1px solid var(--line); }
+    .puntos li:last-child { border-bottom: 1px solid var(--line); }
+    .puntos b { font-size: 17px; font-weight: 600; letter-spacing: -.015em; }
+    .puntos span { color: var(--muted); font-size: 13.5px; }
+
+/* iPhone: marco de titanio negro, isla dinámica y botones laterales.
+   Todo lo de adentro se mide en cqw (ancho del teléfono) para que escale igual en cualquier tamaño. */
+.phone { --r: 30px; position: relative; z-index: 2; width: 166px; aspect-ratio: 9 / 19.5; padding: 9px; border-radius: var(--r); background: linear-gradient(145deg, #3c3c40 0%, #18181b 22%, #0a0a0c 60%, #2c2c30 100%); box-shadow: 0 0 0 1px #000, inset 0 0 0 1.5px rgba(255,255,255,.18), inset 0 0 0 4px #050506, 0 60px 120px -40px rgba(0,0,0,.95); container-type: inline-size; }
+.phone::before, .phone::after { content: ''; position: absolute; width: 3px; border-radius: 2px; }
+.phone::before { right: -3px; top: 27%; height: 13%; background: linear-gradient(90deg, #4a4a4f, #232326); }
+.phone::after { left: -3px; top: 18%; height: 24%; background: linear-gradient(180deg, #3e3e42 0 15%, transparent 15% 27%, #3e3e42 27% 60%, transparent 60% 69%, #3e3e42 69% 100%); }
+.phone-notch { position: absolute; z-index: 3; top: 6cqw; left: 50%; width: 31cqw; height: 9.2cqw; margin-left: -15.5cqw; border-radius: 99px; background: #000; }
+.phone-notch::after { content: ''; position: absolute; right: 3cqw; top: 50%; width: 3.2cqw; height: 3.2cqw; margin-top: -1.6cqw; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #2b3b5c, #0a0d16 70%); }
+.phone-screen { height: 100%; border-radius: calc(var(--r) - 9px); overflow: hidden; background: #fff; color: #111; padding-top: 52px; display: flex; flex-direction: column; }
+
+/* Pantalla de bloqueo con notificaciones de venta */
+.phone-lock .phone-screen { position: relative; padding: 0; background: #0a0a0c; color: #fff; }
+.lock-fondo { position: absolute; inset: 0; width: 100%; height: 100%; }
+.lock-estado { position: relative; display: flex; justify-content: flex-end; align-items: center; gap: 1.8cqw; height: 15cqw; padding: 3.4cqw 7.5cqw 0; }
+.lock-estado svg { height: 3.9cqw; width: auto; fill: #fff; }
+.lock-head { position: relative; text-align: center; padding-top: 1.5cqw; }
+.lock-head small { display: block; font-size: 5.8cqw; font-weight: 600; color: rgba(255,255,255,.9); }
+.lock-head strong { display: block; margin-top: -1cqw; font-size: 26cqw; font-weight: 600; line-height: 1.05; letter-spacing: -.025em; color: rgba(255,255,255,.72); background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.5)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.notifs { position: relative; margin-top: auto; display: flex; flex-direction: column; gap: 2.4cqw; max-height: 60%; padding: 0 3.2cqw; overflow: hidden; mask-image: linear-gradient(180deg, #000 84%, transparent); list-style: none; }
+.notif { display: flex; align-items: center; gap: 3.4cqw; padding: 3.6cqw 4cqw; flex: none; border-radius: 7cqw; background: rgba(58,58,64,.62); border: 1px solid rgba(255,255,255,.18); -webkit-backdrop-filter: blur(18px) saturate(160%); backdrop-filter: blur(18px) saturate(160%); font-size: 4.3cqw; line-height: 1.3; }
+.notif.is-new { animation: notifIn .9s cubic-bezier(.22, 1, .36, 1) both; }
+@keyframes notifIn { from { transform: translateY(-8cqw); } }
+.notif-app { flex: none; width: 12cqw; height: 12cqw; border-radius: 3.2cqw; display: grid; place-items: center; background: linear-gradient(160deg, #ff5f62, #cf2427); box-shadow: inset 0 0 0 1px rgba(255,255,255,.2); }
+.notif-app svg { width: 7cqw; height: 7cqw; }
+.notif-body { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.notif-top { display: flex; justify-content: space-between; align-items: baseline; gap: 2cqw; }
+.notif-top b { font-size: 4.6cqw; font-weight: 600; }
+.notif-top small { flex: none; font-size: 3.9cqw; color: rgba(255,255,255,.62); }
+.notif-title { font-size: 4.4cqw; font-weight: 600; }
+.notif-title em { font-style: normal; color: #8af0b3; }
+.notif-text { color: rgba(255,255,255,.86); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lock-pie { position: relative; display: flex; justify-content: space-between; align-items: center; padding: 5cqw 9.5cqw 0; }
+.lock-btn { width: 14cqw; height: 14cqw; display: grid; place-items: center; border-radius: 50%; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.16); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.lock-btn svg { width: 6cqw; height: 6cqw; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.lock-barra { position: relative; width: 36cqw; height: 1.5cqw; margin: 4.4cqw auto 2.4cqw; border-radius: 99px; background: rgba(255,255,255,.88); }
+    .phone { margin-left: auto; }
+    .phone-lock .phone-screen { border-radius: 21px; }
+    .phone { padding: 7px; }
+    .notifs { mask-image: none; max-height: none; }
+    .medio { grid-template-columns: 1fr 210px; }
+    .notif-text { white-space: nowrap; }
+
+    .planes { margin-top: 24px; display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+    .planes div { padding: 13px 12px; border-left: 1px solid var(--line); }
+    .planes div:first-child { border-left: 0; }
+    .planes .dest { background: #17181f; box-shadow: inset 0 3px 0 var(--accent); }
+    .planes small { display: block; color: var(--muted); font-size: 11.5px; font-weight: 500; }
+    .planes b { font-size: 20px; font-weight: 700; letter-spacing: -.03em; }
+    .planes span { display: block; color: var(--dim); font-size: 10.5px; }
+    .nota { margin-top: 9px; color: var(--muted); font-size: 12px; }
+    .nota b { color: var(--text); font-weight: 600; }
+
+    .qrs { margin-top: auto; padding-top: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .qr { display: flex; align-items: center; gap: 18px; padding: 16px; border-radius: 22px; border: 1px solid var(--line); background: #101116; }
+    .qr-img { flex: none; width: 132px; height: 132px; padding: 10px; border-radius: 14px; background: #fff; }
+    .qr-img svg { display: block; width: 100%; height: 100%; }
+    .qr p { margin-top: 6px; color: var(--muted); font-size: 12.5px; line-height: 1.4; }
+    .qr .qr-t { margin-top: 0; color: var(--text); font-size: 18px; font-weight: 700; letter-spacing: -.02em; line-height: 1.15; }
+    .qr .dir { display: block; margin-top: 10px; font-size: 12px; font-weight: 600; color: var(--text); white-space: nowrap; }
+    .qr.wa .qr-t i { font-style: normal; color: #25d366; }
+
+    @media print { html, body { background: var(--bg); } .hoja { margin: 0; } }
+  </style>
+</head>
+<body>
+  <main class="hoja">
+    <header class="cab">
+      <span class="logo">
+        <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path d="M5 25V8.5l11 10 11-10V25" fill="none" stroke="#f3efe8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="6" r="2.2" fill="#e5383b"/></svg>
+        <span>Monaco <em>Services</em></span>
+      </span>
+      <span class="etiqueta">Tiendas en línea para tu negocio</span>
+    </header>
+
+    <h1>Tu tienda en línea,<br><span>sin comisiones<i>.</i></span></h1>
+    <p class="sub">Sin intermediarios: tu marca, tus clientes y tus ganancias en tu <b>propia tienda</b>.</p>
+
+    <section class="medio">
+      <ul class="puntos">
+        <li><b>Productos ilimitados</b><span>Sube todo tu catálogo, con fotos y variantes.</span></li>
+        <li><b>Dominio y SSL incluidos</b><span>Tu marca, en tu propia dirección web.</span></li>
+        <li><b>Pagos con tarjeta y OXXO</b><span>Cobros seguros con Mercado Pago.</span></li>
+        <li><b>Migramos tu catálogo</b><span>Desde Mercado Libre, Amazon o Excel.</span></li>
+        <li><b>Chat con tus clientes</b><span>Atiende antes y después de cada venta.</span></li>
+      </ul>
+
+      <div class="phone phone-lock" aria-hidden="true">
+        <span class="phone-notch"></span>
+        <div class="phone-screen">
+          <svg class="lock-fondo" viewBox="0 0 300 650" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="lfFondo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#18181b"/><stop offset=".5" stop-color="#0e0e10"/><stop offset="1" stop-color="#141417"/></linearGradient>
+              <linearGradient id="lfLuz" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".55" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity=".1"/></linearGradient>
+              <radialGradient id="lfBrillo" cx=".55" cy=".5" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+              <filter id="lfDifuso" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
+            </defs>
+            <rect width="300" height="650" fill="url(#lfFondo)"/>
+            <ellipse cx="190" cy="170" rx="160" ry="90" fill="url(#lfBrillo)"/>
+            <ellipse cx="150" cy="330" rx="170" ry="90" fill="url(#lfBrillo)"/>
+            <ellipse cx="190" cy="500" rx="160" ry="90" fill="url(#lfBrillo)"/>
+            <g fill="none" stroke="url(#lfLuz)" stroke-linecap="round">
+              <g stroke-width="7" opacity=".4" filter="url(#lfDifuso)">
+                <path d="M-20 170H150Q190 170 190 130V-20"/><path d="M320 170H230Q190 170 190 210V300"/>
+                <path d="M-20 330H110Q150 330 150 370V460"/><path d="M320 330H190Q150 330 150 290V250"/>
+                <path d="M-20 500H150Q190 500 190 460V420"/><path d="M320 500H230Q190 500 190 540V680"/>
+              </g>
+              <g stroke-width="1.2">
+                <path d="M-20 170H150Q190 170 190 130V-20"/><path d="M320 170H230Q190 170 190 210V300"/>
+                <path d="M-20 330H110Q150 330 150 370V460"/><path d="M320 330H190Q150 330 150 290V250"/>
+                <path d="M-20 500H150Q190 500 190 460V420"/><path d="M320 500H230Q190 500 190 540V680"/>
+              </g>
+            </g>
+          </svg>
+          <div class="lock-estado" aria-hidden="true">
+            <svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+            <svg viewBox="0 0 16 12"><path d="M8 11.6 5.6 9.2a3.4 3.4 0 0 1 4.8 0zM3.6 7.2a6.2 6.2 0 0 1 8.8 0l1.4-1.4a8.2 8.2 0 0 0-11.6 0zM.8 4.4a10.2 10.2 0 0 1 14.4 0L16 3.6a11.4 11.4 0 0 0-16 0z"/></svg>
+            <svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.2" fill="none" stroke="#fff" stroke-opacity=".5"/><rect x="2.2" y="2.2" width="17" height="7.6" rx="1.8"/><path d="M25 4v4a2 2 0 0 0 0-4z" fill-opacity=".5"/></svg>
+          </div>
+          <div class="lock-head">
+            <small>Mar 24 nov</small>
+            <strong>16:49</strong>
+          </div>
+          <ul class="notifs">
+            <li class="notif">
+              <span class="notif-app" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 25V8.5l11 10 11-10V25" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="notif-body">
+                <span class="notif-top"><b>Monaco</b><small>ahora</small></span>
+                <span class="notif-title">Nueva venta · <em>$2,990</em></span>
+                <span class="notif-text">Reloj Vértice 40 mm · Andrés S.</span>
+              </span>
+            </li>
+            <li class="notif">
+              <span class="notif-app" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 25V8.5l11 10 11-10V25" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="notif-body">
+                <span class="notif-top"><b>Monaco</b><small>hace 6 min</small></span>
+                <span class="notif-title">Nueva venta · <em>$1,290</em></span>
+                <span class="notif-text">Mochila Alba 22 L · Sofía N.</span>
+              </span>
+            </li>
+            <li class="notif">
+              <span class="notif-app" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 25V8.5l11 10 11-10V25" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="notif-body">
+                <span class="notif-top"><b>Monaco</b><small>hace 11 min</small></span>
+                <span class="notif-title">Nueva venta · <em>$449</em></span>
+                <span class="notif-text">Botella térmica Lumen · Diego H.</span>
+              </span>
+            </li>
+          </ul>
+          <div class="lock-pie" aria-hidden="true">
+            <span class="lock-btn"><svg viewBox="0 0 24 24"><path d="M8 2h8v4l-2 4v11a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V10L8 6z"/><path d="M12 13v2"/></svg></span>
+            <span class="lock-btn"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
+          </div>
+          <span class="lock-barra" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="planes">
+      <div><small>Starter</small><b>$1,490</b><span>al mes + 8% por venta</span></div>
+      <div><small>Básico</small><b>$3,790</b><span>al mes</span></div>
+      <div><small>Esencial</small><b>$5,790</b><span>al mes</span></div>
+      <div class="dest"><small>Marketing</small><b>$8,490</b><span>al mes · más elegido</span></div>
+      <div><small>Pro</small><b>$11,490</b><span>al mes</span></div>
+    </section>
+    <p class="nota"><b>2 meses gratis</b> pagando anual · Precios en pesos mexicanos.</p>
+
+    <section class="qrs">
+      <div class="qr">
+        <div class="qr-img" data-qr="https://jorge-peraza.github.io/Monaco/"></div>
+        <div>
+          <p class="qr-t">Conoce los planes</p>
+          <p>Escanea y mira la página, las tiendas en funcionamiento y arma tu plan.</p>
+          <span class="dir">jorge-peraza.github.io/Monaco</span>
+        </div>
+      </div>
+      <div class="qr wa">
+        <div class="qr-img" data-qr="https://wa.me/526311947463?text=Hola%2C%20quiero%20informacion%20de%20Monaco%20Services"></div>
+        <div>
+          <p class="qr-t"><i>WhatsApp</i><br>Escríbenos</p>
+          <p>Te respondemos el mismo día y te ayudamos a elegir tu plan.</p>
+          <span class="dir">631 194 7463</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Dibuja cada QR como SVG nítido (corrección de errores M, módulos cuadrados).
+    document.querySelectorAll('[data-qr]').forEach(caja => {
+      const qr = qrcode(0, 'M');
+      qr.addData(caja.dataset.qr);
+      qr.make();
+      const n = qr.getModuleCount();
+      let d = '';
+      for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) if (qr.isDark(y, x)) d += `M${x} ${y}h1v1h-1z`;
+      caja.innerHTML = `<svg viewBox="0 0 ${n} ${n}" shape-rendering="crispEdges" role="img" aria-label="Código QR: ${caja.dataset.qr}"><path d="${d}" fill="#0b0c10"/></svg>`;
+    });
+    document.documentElement.dataset.listo = '1';
+  </script>
+</body>
+</html>

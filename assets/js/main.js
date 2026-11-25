@@ -252,7 +252,7 @@
   const mText = $('[data-scrub-words]');
   let mWords = [];
   if (mText) {
-    const destacar = new Set(['marca,', 'clientes', 'ganancias,']);
+    const destacar = new Set(['propia', 'tienda.']);
     mText.innerHTML = mText.textContent.trim().split(/\s+/)
       .map(w => `<span class="w${destacar.has(w) ? ' hl' : ''}">${w}</span>`).join(' ');
     mWords = $$('.w', mText);
@@ -315,7 +315,7 @@
       li.classList.add('is-new');
       $$('.notif-top small', notifs).forEach(s => { if (s.textContent === 'ahora') s.textContent = 'hace 1 min'; });
       notifs.prepend(li);
-      while (notifs.children.length > 6) notifs.lastElementChild.remove();
+      while (notifs.children.length > 3) notifs.lastElementChild.remove();
       suma += monto; n += 1;
       tween(total, suma, pesos, 900);
       cuenta.textContent = n;
