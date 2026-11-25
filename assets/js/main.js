@@ -252,9 +252,10 @@
   const mText = $('[data-scrub-words]');
   let mWords = [];
   if (mText) {
-    const destacar = new Set(['propia', 'tienda.']);
+    // En rojo: marca, clientes, ganancias y las tres últimas palabras («tu propia tienda.»).
+    const destacar = new Set(['marca,', 'clientes', 'ganancias']);
     mText.innerHTML = mText.textContent.trim().split(/\s+/)
-      .map(w => `<span class="w${destacar.has(w) ? ' hl' : ''}">${w}</span>`).join(' ');
+      .map((w, i, todas) => `<span class="w${destacar.has(w) || i >= todas.length - 3 ? ' hl' : ''}">${w}</span>`).join(' ');
     mWords = $$('.w', mText);
   }
 
